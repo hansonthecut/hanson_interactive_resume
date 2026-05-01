@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frank Hanson - Netflix Interactive Resume</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-brand">HANSONFLIX</div>
+        <div class="navbar-nav">
+            <a href="#" class="nav-link">Home</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#education" class="nav-link">Education</a>
+            <a href="mailto:fiifi93@gmail.com" class="nav-link">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Frank Hanson</h1>
+            <h2 class="hero-subtitle">Operations & Data Analytics Leader</h2>
+            <p class="hero-description">Accomplished Operations Manager and Data Analyst blending Amazon-level logistics expertise with advanced Business Intelligence (SQL, Python, Power BI). Proven leader navigating complex challenges.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-play" onclick="window.open('https://www.linkedin.com/in/frank-hanson-1595a0186')">
+                    <span class="icon">▶</span> Connect
+                </button>
+                <button class="btn btn-info" onclick="alert('Email: fiifi93@gmail.com\\nPhone: 719-663-5020')">
+                    <span class="icon">ⓘ</span> More Info
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Sliders -->
+    <main>
+        <section class="row" id="experience">
+            <h2 class="row-title">Trending Now (Experience)</h2>
+            <div class="row-posters" id="experience-posters">
+                <!-- Injected via JS -->
+            </div>
+        </section>
+
+        <section class="row" id="education">
+            <h2 class="row-title">Critically Acclaimed (Education & Skills)</h2>
+            <div class="row-posters" id="education-posters">
+                <!-- Injected via JS -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal-content" id="modal-content">
+            <button class="modal-close" id="modal-close">✕</button>
+            
+            <div class="modal-header">
+                <div class="modal-header-content">
+                    <h1 class="modal-title" id="modal-title">Title</h1>
+                    <div class="modal-meta">
+                        <span class="match-score" id="modal-match">99% Match</span>
+                        <span id="modal-date">Date</span>
+                        <span class="hd-badge">HD</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-body">
+                <div class="modal-desc" id="modal-desc">
+                    Description goes here.
+                </div>
+                <div class="modal-tags">
+                    <div class="tag-group">
+                        <span>Cast (Company): </span>
+                        <span class="tag-values" id="modal-company">Company</span>
+                    </div>
+                    <div class="tag-group">
+                        <span>Genres (Skills): </span>
+                        <span class="tag-values" id="modal-skills">Skills</span>
+                    </div>
+                    <div class="tag-group">
+                        <span>This show is: </span>
+                        <span class="tag-values" id="modal-type">Type</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
