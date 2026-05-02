@@ -70,6 +70,39 @@ const resumeData = {
             type: "Documentary",
             description: "Bachelor of Arts in Leadership.",
             skills: ["Leadership", "Management", "Strategy"],
+            match: "100% Match"
+        }
+    ],
+    competencies: [
+        {
+            id: "comp-leadership",
+            title: "Leadership & Group Dynamics",
+            company: "Soft Skills",
+            date: "Core",
+            type: "Behind the Scenes",
+            description: "Capability to lead and motivate cross-functional teams, delegate tasks, and facilitate collaboration. Strong verbal and written communication skills to articulate project objectives clearly.",
+            skills: ["Leadership", "Communication", "Teamwork"],
+            match: "100% Match"
+        },
+        {
+            id: "comp-risk",
+            title: "Risk & Quality Management",
+            company: "Operations",
+            date: "Core",
+            type: "Behind the Scenes",
+            description: "Proficiency in identifying potential risks, developing mitigation strategies, and creating contingency plans. Understanding of quality standards and assurance processes.",
+            skills: ["Risk Management", "Quality Assurance", "Contingency Planning"],
+            match: "100% Match"
+        },
+        {
+            id: "comp-data",
+            title: "Data Storytelling & Statistics",
+            company: "Analytics",
+            date: "Core",
+            type: "Behind the Scenes",
+            description: "Skill in translating complex data analysis into clear and concise narratives. Understanding of statistical concepts such as hypothesis testing and regression analysis.",
+            skills: ["Data Storytelling", "Statistical Knowledge", "Problem Solving"],
+            match: "100% Match"
         }
     ],
     certifications: [
@@ -171,4 +204,5 @@ document.addEventListener('DOMContentLoaded', () => {
     renderPosters('experience-posters', resumeData.roles);
     renderPosters('education-posters', resumeData.education);
     renderPosters('certifications-posters', resumeData.certifications);
+    renderPosters('competencies-posters', resumeData.competencies);
 });
