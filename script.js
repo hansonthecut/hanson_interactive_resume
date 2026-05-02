@@ -46,7 +46,7 @@ const resumeData = {
             description: "Full documentary-style travel film capturing Guatemalan culture, landscapes, and daily life through cinematic compositions and local storytelling.",
             skills: ["Documentary", "Travel Film", "Storytelling", "DaVinci Resolve"],
             match: "96% Match",
-            image: "assets/web/wildlife.jpg"
+            image: "Assets/web/wildlife.jpg"
         }
     ],
     roles: [
@@ -59,7 +59,7 @@ const resumeData = {
             description: "<strong>Situation:</strong> Managing diverse teams in a high-volume Amazon warehouse environment required maintaining optimal performance and safety standards.<br><br><strong>Task:</strong> Needed to optimize complex workflows, reduce reporting times, and improve cost-efficiency while ensuring 99%+ safety compliance.<br><br><strong>Action:</strong> Lead, mentor, and manage diverse teams. Developed and executed strategic operational plans exceeding daily goals. Orchestrated AI training workshops for executive stakeholders, empowering leadership to leverage AI protocols. Spearheaded a special project for a Fortune 500 partner, developing a comprehensive workforce skills-tracking system. Championed a culture of safety and accountability leveraging data analytics.<br><br><strong>Result:</strong> Achieved 99%+ safety compliance, resulted in a 20% reduction in project delivery time via the skills-tracking system, and optimized end-to-end logistics for a 15% increase in cost-efficiency.",
             skills: ["Operations", "AI Systems", "SQL", "Python", "Logistics", "Team Leadership"],
             match: "99% Match",
-            image: "assets/web/studio.jpg"
+            image: "Assets/web/studio.jpg"
         },
         {
             id: "bridgepark",
@@ -127,7 +127,7 @@ const resumeData = {
             description: "Bachelor of Arts in Global Studies in Development and Change with a Minor in Geography and Minor in Sustainability.",
             skills: ["Global Studies", "Geography", "Sustainability", "Development"],
             match: "100% Match",
-            image: null
+            image: "assets/web/landscape.jpg"
         },
         {
             id: "richmond-lead",
@@ -138,7 +138,7 @@ const resumeData = {
             description: "Bachelor of Arts in Leadership — studying organizational behavior, group dynamics, strategic management, and cross-cultural leadership.",
             skills: ["Leadership", "Management", "Strategy", "Organizational Behavior"],
             match: "100% Match",
-            image: null
+            image: "assets/web/mountains.jpg"
         }
     ],
     certifications: [
@@ -151,7 +151,7 @@ const resumeData = {
             description: "Advanced proficiency in Agile, Scrum, JIRA, Salesforce, MS Project, and Microsoft Suite for directing cross-functional teams and ensuring on-time delivery.",
             skills: ["Agile", "Scrum", "JIRA", "Salesforce", "MS Project"],
             match: "100% Match",
-            image: null
+            image: "assets/web/concert.jpg"
         },
         {
             id: "cert-data",
@@ -162,7 +162,7 @@ const resumeData = {
             description: "Expert-level command of Power BI, DAX, Power Query Editor, Tableau Desktop/Server, Excel, SQL, and Python for transforming raw data into actionable insights.",
             skills: ["Power BI", "Tableau", "SQL", "Python", "DAX", "Excel"],
             match: "100% Match",
-            image: null
+            image: "assets/web/studio.jpg"
         },
         {
             id: "cert-geo",
@@ -173,7 +173,7 @@ const resumeData = {
             description: "Specialized in spatial analysis and image processing utilizing the ESRI suite, ArcGIS, and QGIS for complex environmental and logistical reporting.",
             skills: ["ESRI", "ArcGIS", "QGIS", "Spatial Analysis"],
             match: "100% Match",
-            image: null
+            image: "assets/web/aerial.jpg"
         }
     ],
     competencies: [
@@ -186,7 +186,7 @@ const resumeData = {
             description: "Ability to create comprehensive project plans, define goals, set timelines, and allocate resources effectively. Competence in budgeting, tracking expenses, and managing stakeholders while adapting to changing requirements.",
             skills: ["Project Planning", "Budgeting", "Time Management", "Stakeholder Management", "Adaptability"],
             match: "100% Match",
-            image: null
+            image: "assets/web/lens.jpg"
         },
         {
             id: "comp-leadership",
@@ -197,7 +197,7 @@ const resumeData = {
             description: "Capability to lead and motivate cross-functional teams, delegate tasks, and facilitate collaboration. Strong verbal and written communication skills. Ability to negotiate, resolve conflicts, and make informed decisions.",
             skills: ["Leadership", "Communication", "Negotiation", "Conflict Resolution", "Decision Making"],
             match: "100% Match",
-            image: null
+            image: "assets/web/event.jpg"
         },
         {
             id: "comp-risk",
@@ -208,7 +208,7 @@ const resumeData = {
             description: "Proficiency in identifying potential risks, developing mitigation strategies, and creating contingency plans. Understanding of quality standards and maintaining assurance processes.",
             skills: ["Risk Management", "Quality Management", "Contingency Planning"],
             match: "100% Match",
-            image: null
+            image: "assets/web/mountains.jpg"
         },
         {
             id: "comp-data-analysis",
@@ -219,7 +219,7 @@ const resumeData = {
             description: "Proficiency in data analysis techniques, data cleaning, transformation, and SQL database management. Familiarity with visualization tools like Tableau and Power BI, and statistical software for modeling.",
             skills: ["Data Analysis", "SQL", "Data Cleaning", "Data Visualization", "Statistical Software"],
             match: "100% Match",
-            image: null
+            image: "assets/web/studio.jpg"
         },
         {
             id: "comp-data",
@@ -230,7 +230,7 @@ const resumeData = {
             description: "Skill in translating complex data into clear narratives for non-technical stakeholders. Deep understanding of statistical concepts, hypothesis testing, and probability. Strong problem-solving and critical thinking abilities. Maintaining domain knowledge and continuous learning.",
             skills: ["Data Storytelling", "Statistical Knowledge", "Problem Solving", "Critical Thinking", "Continuous Learning"],
             match: "100% Match",
-            image: null
+            image: "assets/web/branding.jpg"
         }
     ]
 };
@@ -427,6 +427,23 @@ function initAudio() {
 }
 
 /* ============================================
+   SCROLL-REVEAL — Staggered section entrance
+   ============================================ */
+function initScrollReveal() {
+    const sections = document.querySelectorAll('.row');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('row-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    sections.forEach(section => observer.observe(section));
+}
+
+/* ============================================
    INITIALIZE
    ============================================ */
 document.addEventListener('DOMContentLoaded', () => {
@@ -437,4 +454,5 @@ document.addEventListener('DOMContentLoaded', () => {
     renderPosters('competencies-posters', resumeData.competencies);
 
     initAudio();
+    initScrollReveal();
 });

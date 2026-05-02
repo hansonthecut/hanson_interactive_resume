@@ -1,0 +1,368 @@
+--- script.js	2026-05-02 16:57:00
++++ Documents/Netflix-Resume/script.js	2026-05-02 14:52:07
+@@ -1,5 +1,5 @@
+ /* ============================================
+-   HANSON — Interactive Resume Engine
++   HANSONFLIX — Interactive Resume Engine
+    ============================================ */
+ 
+ const resumeData = {
+@@ -10,7 +10,7 @@
+             company: "Event Photography",
+             date: "2025",
+             type: "Featured",
+-            description: "High-energy live concert and event photography showcasing cinematic lighting techniques, stage presence capture, and crowd energy documentation.",
++            description: "High-energy live concert and event photography showcasing cinematic lighting techniques, stage presence capture, and crowd energy documentation. Shot on Sony a7R III with fast primes in challenging low-light environments.",
+             skills: ["Event Photography", "Low Light", "Sony a7R III", "Stage Coverage"],
+             match: "99% Match",
+             image: "assets/web/concert.jpg"
+@@ -21,7 +21,7 @@
+             company: "Brand & Event Coverage",
+             date: "2026",
+             type: "Featured",
+-            description: "Professional brand event photography for Black Golf Club DC — capturing authentic moments, lifestyle branding, and community engagement.",
++            description: "Professional brand event photography for Black Golf Club DC — capturing authentic moments, lifestyle branding, and community engagement at elevated social gatherings.",
+             skills: ["Brand Photography", "Lifestyle", "Event Coverage", "Portraiture"],
+             match: "98% Match",
+             image: "assets/web/event.jpg"
+@@ -32,21 +32,65 @@
+             company: "Drone Cinematography",
+             date: "2025",
+             type: "Featured",
+-            description: "Cinematic 4K drone footage capturing the Colorado Rockies — sweeping mountain vistas, alpine terrain mapping, and aerial storytelling.",
++            description: "Cinematic 4K drone footage capturing the Colorado Rockies — sweeping mountain vistas, alpine terrain mapping, and aerial storytelling with professional color grading.",
+             skills: ["DJI Drone", "4K Video", "Aerial", "Color Grading"],
+             match: "97% Match",
+             image: "assets/web/aerial.jpg"
+         },
+         {
+-            id: "port-guatemala",
+-            title: "Guatemala Documentary",
+-            company: "Travel Cinematography",
++            id: "port-studio",
++            title: "Studio Production",
++            company: "Creative Direction",
+             date: "2026",
+             type: "Featured",
+-            description: "Full documentary-style travel film capturing Guatemalan culture, landscapes, and daily life through cinematic compositions and local storytelling.",
+-            skills: ["Documentary", "Travel Film", "Storytelling", "DaVinci Resolve"],
++            description: "Full studio production work including lighting setup, creative direction, and cinematography. Managing multi-light setups with Godox modifiers for commercial and editorial shoots.",
++            skills: ["Studio Lighting", "Creative Direction", "Godox", "Cinematography"],
+             match: "96% Match",
++            image: "assets/web/dsc.jpg"
++        },
++        {
++            id: "port-lifestyle",
++            title: "Lifestyle & Social Events",
++            company: "Social Photography",
++            date: "2026",
++            type: "Featured",
++            description: "Vibrant lifestyle photography capturing authentic human connection, rooftop soirées, and brand activations with natural light and editorial composition.",
++            skills: ["Lifestyle", "Natural Light", "Editorial", "Social Events"],
++            match: "95% Match",
+             image: "assets/web/wildlife.jpg"
++        },
++        {
++            id: "port-product",
++            title: "Product Photography",
++            company: "Commercial Work",
++            date: "2025",
++            type: "Featured",
++            description: "Detailed product photography for commercial clients — footwear, apparel, and accessories with precision focus stacking and environmental context.",
++            skills: ["Product Photography", "Macro", "Commercial", "Focus Stacking"],
++            match: "94% Match",
++            image: "assets/web/lifestyle.jpg"
++        },
++        {
++            id: "port-landscape",
++            title: "Landscape & Nature",
++            company: "Fine Art Photography",
++            date: "2025",
++            type: "Featured",
++            description: "Sweeping landscape compositions from the Colorado Rockies to the coasts — golden hour captures, dramatic skies, and expansive environmental storytelling.",
++            skills: ["Landscape", "Golden Hour", "Wide Angle", "Fine Art"],
++            match: "93% Match",
++            image: "assets/web/landscape.jpg"
++        },
++        {
++            id: "port-portraits",
++            title: "Portrait & Branding",
++            company: "Portrait Photography",
++            date: "2026",
++            type: "Featured",
++            description: "Professional portrait and personal branding photography. Studio and on-location work with controlled lighting to capture personality and professionalism.",
++            skills: ["Portraiture", "Branding", "Studio", "On-Location"],
++            match: "92% Match",
++            image: "assets/web/portraits.jpg"
+         }
+     ],
+     roles: [
+@@ -56,20 +100,20 @@
+             company: "Amazon",
+             date: "May 2023 – Present",
+             type: "Blockbuster",
+-            description: "<strong>Situation:</strong> Managing diverse teams in a high-volume Amazon warehouse environment required maintaining optimal performance and safety standards.<br><br><strong>Task:</strong> Needed to optimize complex workflows, reduce reporting times, and improve cost-efficiency while ensuring 99%+ safety compliance.<br><br><strong>Action:</strong> Lead, mentor, and manage diverse teams. Developed and executed strategic operational plans exceeding daily goals. Orchestrated AI training workshops for executive stakeholders, empowering leadership to leverage AI protocols. Spearheaded a special project for a Fortune 500 partner, developing a comprehensive workforce skills-tracking system. Championed a culture of safety and accountability leveraging data analytics.<br><br><strong>Result:</strong> Achieved 99%+ safety compliance, resulted in a 20% reduction in project delivery time via the skills-tracking system, and optimized end-to-end logistics for a 15% increase in cost-efficiency.",
++            description: "Lead, mentor, and manage diverse teams in a high-volume warehouse environment. Architected and deployed custom AI systems to automate reporting, reducing manual data entry by 30%. Orchestrated AI training workshops for executive stakeholders. Managed complex, end-to-end logistics ensuring a 15% increase in cost-efficiency.",
+             skills: ["Operations", "AI Systems", "SQL", "Python", "Logistics", "Team Leadership"],
+             match: "99% Match",
+             image: "assets/web/studio.jpg"
+         },
+         {
+             id: "bridgepark",
+-            title: "Performance Consultant & Project Manager",
++            title: "Performance Consultant & Data Analyst",
+             company: "Richmond BridgePark Foundation",
+             date: "May 2022 – May 2023",
+             type: "Critically Acclaimed",
+-            description: "<strong>Situation:</strong> A high-profile community infrastructure project required precise direction, budgetary accountability, and strong stakeholder alignment.<br><br><strong>Task:</strong> Ensure successful and timely delivery of the project within strict budgetary constraints and mitigate risks throughout the project lifecycle.<br><br><strong>Action:</strong> Led a cross-functional team of 10 members. Architected and implemented a transformative project management framework based on Agile principles. Orchestrated all project phases from initial conception to final fruition, including meticulous project planning, scope delineation, and resource management.<br><br><strong>Result:</strong> The Agile framework resulted in a 20% reduction in project delivery time and a measurable increase in stakeholder satisfaction.",
+-            skills: ["Agile", "Project Management", "Cross-functional Leadership", "Budgeting", "Stakeholder Management"],
+-            match: "98% Match",
++            description: "Led a cross-functional team of 10 members. Architected a transformative project management framework based on Agile principles, reducing delivery time by 20%. Designed highly interactive dashboards using Tableau and Power BI, fostering a 25% improvement in data accessibility.",
++            skills: ["Power BI", "Tableau", "Agile", "SQL Server", "Cross-functional Leadership"],
++            match: "97% Match",
+             image: "assets/web/branding.jpg"
+         },
+         {
+@@ -78,10 +122,10 @@
+             company: "Ghana Ministry of Energy",
+             date: "Jan 2021 – Aug 2021",
+             type: "International Hit",
+-            description: "<strong>Situation:</strong> West Africa needed to evaluate the feasibility of transitioning to renewable energy to bypass fossil fuel reliance.<br><br><strong>Task:</strong> Analyze regional energy policies, economic trends, and environmental factors to support sustainable energy initiatives.<br><br><strong>Action:</strong> Researched and analyzed regional energy policies and economic trends. Developed strategic recommendations and policy frameworks for renewable energy adoption. Engaged in advocacy efforts and stakeholder outreach to foster collaboration.<br><br><strong>Result:</strong> Successfully delivered comprehensive policy frameworks that garnered support for sustainable energy initiatives within the West African context.",
+-            skills: ["Policy Analysis", "Renewable Energy", "Research", "Advocacy", "Stakeholder Engagement"],
+-            match: "96% Match",
+-            image: "assets/web/landscape.jpg"
++            description: "Researched and analyzed regional energy policies to evaluate the impact of transitioning to renewable energy. Developed strategic recommendations and policy frameworks to support the adoption of renewable energy technologies.",
++            skills: ["Policy Analysis", "Renewable Energy", "Research", "Stakeholder Engagement"],
++            match: "94% Match",
++            image: "assets/web/mountains.jpg"
+         },
+         {
+             id: "freelance-policy",
+@@ -89,9 +133,9 @@
+             company: "Freelance",
+             date: "May 2020 – Aug 2020",
+             type: "Indie Favorite",
+-            description: "<strong>Situation:</strong> Increasing Chinese investments in Africa necessitated an in-depth understanding of their socio-economic implications.<br><br><strong>Task:</strong> Assess the dynamics of Chinese-African relations, including trade agreements, infrastructure projects, and technology transfers.<br><br><strong>Action:</strong> Conducted in-depth policy analysis and research on investments in various sectors. Collaborated with interdisciplinary teams and stakeholders to formulate evidence-based recommendations.<br><br><strong>Result:</strong> Identified key opportunities and challenges, delivering strategic approaches for maximizing the benefits of Chinese engagement while mitigating potential vulnerabilities.",
+-            skills: ["Research", "Socio-economic Analysis", "Policy", "Strategy", "Interdisciplinary Collaboration"],
+-            match: "94% Match",
++            description: "Conducted in-depth policy analysis assessing the socio-economic implications of Chinese investments and partnerships across Africa. Collaborated with interdisciplinary teams to formulate evidence-based recommendations.",
++            skills: ["Research", "Socio-economic Analysis", "Policy", "Strategy"],
++            match: "90% Match",
+             image: "assets/web/lens.jpg"
+         },
+         {
+@@ -100,20 +144,9 @@
+             company: "University of Richmond",
+             date: "Sept 2019 – May 2023",
+             type: "Cult Classic",
+-            description: "<strong>Situation:</strong> Various analytical assignments required optimal application of satellite imaging technology for data intelligence.<br><br><strong>Task:</strong> Lead project planning and execution to guarantee punctual delivery of reports and data visualizations.<br><br><strong>Action:</strong> Provided expert consultation on satellite imaging technology. Led project planning and execution. Leveraged a diverse set of tools including Excel, ArcGIS suite, Tableau, Stata, and QGIS for comprehensive data intelligence and analysis.<br><br><strong>Result:</strong> Ensured optimal resource deployment, delivering comprehensive data intelligence that contributed directly to informed project management decisions.",
+-            skills: ["ArcGIS", "QGIS", "Tableau", "Stata", "Spatial Analysis"],
++            description: "Applied advanced image processing techniques and spatial analysis using QGIS and ArcGIS. Designed interactive dashboards using Tableau Desktop. Utilized SQL Server extensively to query large geospatial datasets, achieving a 15% efficiency gain.",
++            skills: ["ArcGIS", "QGIS", "Tableau", "Spatial Analysis", "SQL"],
+             match: "95% Match",
+-            image: "assets/web/mountains.jpg"
+-        },
+-        {
+-            id: "giddings-foundation",
+-            title: "Member for the Board of Advisors",
+-            company: "The Giddings Foundation",
+-            date: "May 2016 – May 2019",
+-            type: "Classic",
+-            description: "<strong>Situation:</strong> The foundation required high-level strategic guidance to advance its mission in community development and education.<br><br><strong>Task:</strong> Provide executive oversight, ensure financial accountability, and engage in fundraising strategy to support programs in Colorado Springs.<br><br><strong>Action:</strong> Actively participated in quarterly board meetings, strategic discussions, and key decision-making processes. Engaged in donor cultivation and partnership development.<br><br><strong>Result:</strong> Secured essential resources and support for programs, ensuring organizational transparency and alignment with stated long-term community development objectives.",
+-            skills: ["Strategic Guidance", "Executive Oversight", "Fundraising", "Partnership Development"],
+-            match: "93% Match",
+             image: "assets/web/aerial.jpg"
+         }
+     ],
+@@ -127,7 +160,7 @@
+             description: "Bachelor of Arts in Global Studies in Development and Change with a Minor in Geography and Minor in Sustainability.",
+             skills: ["Global Studies", "Geography", "Sustainability", "Development"],
+             match: "100% Match",
+-            image: null
++            image: "assets/web/landscape.jpg"
+         },
+         {
+             id: "richmond-lead",
+@@ -138,7 +171,7 @@
+             description: "Bachelor of Arts in Leadership — studying organizational behavior, group dynamics, strategic management, and cross-cultural leadership.",
+             skills: ["Leadership", "Management", "Strategy", "Organizational Behavior"],
+             match: "100% Match",
+-            image: null
++            image: "assets/web/mountains.jpg"
+         }
+     ],
+     certifications: [
+@@ -151,7 +184,7 @@
+             description: "Advanced proficiency in Agile, Scrum, JIRA, Salesforce, MS Project, and Microsoft Suite for directing cross-functional teams and ensuring on-time delivery.",
+             skills: ["Agile", "Scrum", "JIRA", "Salesforce", "MS Project"],
+             match: "100% Match",
+-            image: null
++            image: "assets/web/concert.jpg"
+         },
+         {
+             id: "cert-data",
+@@ -162,7 +195,7 @@
+             description: "Expert-level command of Power BI, DAX, Power Query Editor, Tableau Desktop/Server, Excel, SQL, and Python for transforming raw data into actionable insights.",
+             skills: ["Power BI", "Tableau", "SQL", "Python", "DAX", "Excel"],
+             match: "100% Match",
+-            image: null
++            image: "assets/web/studio.jpg"
+         },
+         {
+             id: "cert-geo",
+@@ -173,31 +206,20 @@
+             description: "Specialized in spatial analysis and image processing utilizing the ESRI suite, ArcGIS, and QGIS for complex environmental and logistical reporting.",
+             skills: ["ESRI", "ArcGIS", "QGIS", "Spatial Analysis"],
+             match: "100% Match",
+-            image: null
++            image: "assets/web/aerial.jpg"
+         }
+     ],
+     competencies: [
+         {
+-            id: "comp-project-management",
+-            title: "Project Management",
+-            company: "Operations",
+-            date: "Core",
+-            type: "Behind the Scenes",
+-            description: "Ability to create comprehensive project plans, define goals, set timelines, and allocate resources effectively. Competence in budgeting, tracking expenses, and managing stakeholders while adapting to changing requirements.",
+-            skills: ["Project Planning", "Budgeting", "Time Management", "Stakeholder Management", "Adaptability"],
+-            match: "100% Match",
+-            image: null
+-        },
+-        {
+             id: "comp-leadership",
+-            title: "Leadership & Communication",
++            title: "Leadership & Group Dynamics",
+             company: "Soft Skills",
+             date: "Core",
+             type: "Behind the Scenes",
+-            description: "Capability to lead and motivate cross-functional teams, delegate tasks, and facilitate collaboration. Strong verbal and written communication skills. Ability to negotiate, resolve conflicts, and make informed decisions.",
+-            skills: ["Leadership", "Communication", "Negotiation", "Conflict Resolution", "Decision Making"],
++            description: "Capability to lead and motivate cross-functional teams, delegate tasks, and facilitate collaboration. Strong verbal and written communication skills to articulate project objectives clearly.",
++            skills: ["Leadership", "Communication", "Teamwork", "Collaboration"],
+             match: "100% Match",
+-            image: null
++            image: "assets/web/event.jpg"
+         },
+         {
+             id: "comp-risk",
+@@ -205,32 +227,21 @@
+             company: "Operations",
+             date: "Core",
+             type: "Behind the Scenes",
+-            description: "Proficiency in identifying potential risks, developing mitigation strategies, and creating contingency plans. Understanding of quality standards and maintaining assurance processes.",
+-            skills: ["Risk Management", "Quality Management", "Contingency Planning"],
++            description: "Proficiency in identifying potential risks, developing mitigation strategies, and creating contingency plans. Understanding of quality standards and assurance processes throughout the project lifecycle.",
++            skills: ["Risk Management", "Quality Assurance", "Contingency Planning"],
+             match: "100% Match",
+-            image: null
++            image: "assets/web/mountains.jpg"
+         },
+         {
+-            id: "comp-data-analysis",
+-            title: "Data Analysis & Database Management",
+-            company: "Analytics",
+-            date: "Core",
+-            type: "Behind the Scenes",
+-            description: "Proficiency in data analysis techniques, data cleaning, transformation, and SQL database management. Familiarity with visualization tools like Tableau and Power BI, and statistical software for modeling.",
+-            skills: ["Data Analysis", "SQL", "Data Cleaning", "Data Visualization", "Statistical Software"],
+-            match: "100% Match",
+-            image: null
+-        },
+-        {
+             id: "comp-data",
+             title: "Data Storytelling & Statistics",
+             company: "Analytics",
+             date: "Core",
+             type: "Behind the Scenes",
+-            description: "Skill in translating complex data into clear narratives for non-technical stakeholders. Deep understanding of statistical concepts, hypothesis testing, and probability. Strong problem-solving and critical thinking abilities. Maintaining domain knowledge and continuous learning.",
+-            skills: ["Data Storytelling", "Statistical Knowledge", "Problem Solving", "Critical Thinking", "Continuous Learning"],
++            description: "Skill in translating complex data analysis into clear and concise narratives. Understanding of statistical concepts such as hypothesis testing, regression analysis, and probability theory.",
++            skills: ["Data Storytelling", "Statistical Knowledge", "Problem Solving", "Critical Thinking"],
+             match: "100% Match",
+-            image: null
++            image: "assets/web/branding.jpg"
+         }
+     ]
+ };
+@@ -325,7 +336,7 @@
+     document.getElementById('modal-title').textContent = item.title;
+     document.getElementById('modal-match').textContent = item.match;
+     document.getElementById('modal-date').textContent = item.date;
+-    document.getElementById('modal-desc').innerHTML = item.description;
++    document.getElementById('modal-desc').textContent = item.description;
+     document.getElementById('modal-company').textContent = item.company;
+     document.getElementById('modal-skills').textContent = item.skills.join(', ');
+     document.getElementById('modal-type').textContent = item.type;
+@@ -380,50 +391,20 @@
+ });
+ 
+ /* ============================================
+-   AUDIO CONTROLS
++   SCROLL-REVEAL — Staggered section entrance
+    ============================================ */
+-function initAudio() {
+-    const bgMusic = document.getElementById('bg-music');
+-    const jingle = document.getElementById('intro-jingle');
+-    const soundToggle = document.getElementById('sound-toggle');
+-    const soundOnIcon = document.getElementById('sound-on-icon');
+-    const soundOffIcon = document.getElementById('sound-off-icon');
+-    
+-    let hasInteracted = false;
+-    let isMuted = false;
++function initScrollReveal() {
++    const sections = document.querySelectorAll('.row');
++    const observer = new IntersectionObserver((entries) => {
++        entries.forEach(entry => {
++            if (entry.isIntersecting) {
++                entry.target.classList.add('row-visible');
++                observer.unobserve(entry.target);
++            }
++        });
++    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+ 
+-    const toggleSound = (e) => {
+-        if (e) e.stopPropagation();
+-        isMuted = !isMuted;
+-        bgMusic.muted = isMuted;
+-        jingle.muted = isMuted;
+-        
+-        soundOnIcon.style.display = isMuted ? 'none' : 'block';
+-        soundOffIcon.style.display = isMuted ? 'block' : 'none';
+-    };
+-
+-    const playIntro = () => {
+-        if (hasInteracted) return;
+-        hasInteracted = true;
+-
+-        // Play jingle
+-        jingle.volume = 0.6;
+-        jingle.play().catch(e => console.log("Audio play blocked", e));
+-
+-        // Start background music after jingle or immediately if jingle fails
+-        setTimeout(() => {
+-            bgMusic.volume = 0.2;
+-            bgMusic.play().catch(e => console.log("BG Audio play blocked", e));
+-        }, 1200);
+-
+-        // Remove listener
+-        document.removeEventListener('click', playIntro);
+-        document.removeEventListener('keydown', playIntro);
+-    };
+-
+-    soundToggle.addEventListener('click', toggleSound);
+-    document.addEventListener('click', playIntro);
+-    document.addEventListener('keydown', playIntro);
++    sections.forEach(section => observer.observe(section));
+ }
+ 
+ /* ============================================
+@@ -435,6 +416,5 @@
+     renderPosters('education-posters', resumeData.education);
+     renderPosters('certifications-posters', resumeData.certifications);
+     renderPosters('competencies-posters', resumeData.competencies);
+-
+-    initAudio();
++    initScrollReveal();
+ });
