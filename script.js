@@ -1,5 +1,5 @@
 /* ============================================
-   HANSONFLIX — Interactive Resume Engine
+   HANSON — Interactive Resume Engine
    ============================================ */
 
 const resumeData = {
@@ -35,7 +35,7 @@ const resumeData = {
             description: "Cinematic 4K drone footage capturing the Colorado Rockies — sweeping mountain vistas, alpine terrain mapping, and aerial storytelling.",
             skills: ["DJI Drone", "4K Video", "Aerial", "Color Grading"],
             match: "97% Match",
-            image: null
+            image: "assets/web/aerial.jpg"
         },
         {
             id: "port-guatemala",
@@ -46,7 +46,7 @@ const resumeData = {
             description: "Full documentary-style travel film capturing Guatemalan culture, landscapes, and daily life through cinematic compositions and local storytelling.",
             skills: ["Documentary", "Travel Film", "Storytelling", "DaVinci Resolve"],
             match: "96% Match",
-            image: null
+            image: "assets/web/wildlife.jpg"
         }
     ],
     roles: [
@@ -56,21 +56,21 @@ const resumeData = {
             company: "Amazon",
             date: "May 2023 – Present",
             type: "Blockbuster",
-            description: "Lead, mentor, and manage diverse teams in a high-volume warehouse environment. Architected and deployed custom AI systems to automate reporting, reducing manual data entry by 30%. Orchestrated AI training workshops for executive stakeholders. Managed complex, end-to-end logistics ensuring a 15% increase in cost-efficiency.",
+            description: "<strong>Situation:</strong> Managing diverse teams in a high-volume Amazon warehouse environment required maintaining optimal performance and safety standards.<br><br><strong>Task:</strong> Needed to optimize complex workflows, reduce reporting times, and improve cost-efficiency while ensuring 99%+ safety compliance.<br><br><strong>Action:</strong> Lead, mentor, and manage diverse teams. Developed and executed strategic operational plans exceeding daily goals. Orchestrated AI training workshops for executive stakeholders, empowering leadership to leverage AI protocols. Spearheaded a special project for a Fortune 500 partner, developing a comprehensive workforce skills-tracking system. Championed a culture of safety and accountability leveraging data analytics.<br><br><strong>Result:</strong> Achieved 99%+ safety compliance, resulted in a 20% reduction in project delivery time via the skills-tracking system, and optimized end-to-end logistics for a 15% increase in cost-efficiency.",
             skills: ["Operations", "AI Systems", "SQL", "Python", "Logistics", "Team Leadership"],
             match: "99% Match",
-            image: null
+            image: "assets/web/studio.jpg"
         },
         {
             id: "bridgepark",
-            title: "Performance Consultant & Data Analyst",
+            title: "Performance Consultant & Project Manager",
             company: "Richmond BridgePark Foundation",
             date: "May 2022 – May 2023",
             type: "Critically Acclaimed",
-            description: "Led a cross-functional team of 10 members. Architected a transformative project management framework based on Agile principles, reducing delivery time by 20%. Designed highly interactive dashboards using Tableau and Power BI, fostering a 25% improvement in data accessibility.",
-            skills: ["Power BI", "Tableau", "Agile", "SQL Server", "Cross-functional Leadership"],
-            match: "97% Match",
-            image: null
+            description: "<strong>Situation:</strong> A high-profile community infrastructure project required precise direction, budgetary accountability, and strong stakeholder alignment.<br><br><strong>Task:</strong> Ensure successful and timely delivery of the project within strict budgetary constraints and mitigate risks throughout the project lifecycle.<br><br><strong>Action:</strong> Led a cross-functional team of 10 members. Architected and implemented a transformative project management framework based on Agile principles. Orchestrated all project phases from initial conception to final fruition, including meticulous project planning, scope delineation, and resource management.<br><br><strong>Result:</strong> The Agile framework resulted in a 20% reduction in project delivery time and a measurable increase in stakeholder satisfaction.",
+            skills: ["Agile", "Project Management", "Cross-functional Leadership", "Budgeting", "Stakeholder Management"],
+            match: "98% Match",
+            image: "assets/web/branding.jpg"
         },
         {
             id: "ghana-energy",
@@ -78,10 +78,10 @@ const resumeData = {
             company: "Ghana Ministry of Energy",
             date: "Jan 2021 – Aug 2021",
             type: "International Hit",
-            description: "Researched and analyzed regional energy policies to evaluate the impact of transitioning to renewable energy. Developed strategic recommendations and policy frameworks to support the adoption of renewable energy technologies.",
-            skills: ["Policy Analysis", "Renewable Energy", "Research", "Stakeholder Engagement"],
-            match: "94% Match",
-            image: null
+            description: "<strong>Situation:</strong> West Africa needed to evaluate the feasibility of transitioning to renewable energy to bypass fossil fuel reliance.<br><br><strong>Task:</strong> Analyze regional energy policies, economic trends, and environmental factors to support sustainable energy initiatives.<br><br><strong>Action:</strong> Researched and analyzed regional energy policies and economic trends. Developed strategic recommendations and policy frameworks for renewable energy adoption. Engaged in advocacy efforts and stakeholder outreach to foster collaboration.<br><br><strong>Result:</strong> Successfully delivered comprehensive policy frameworks that garnered support for sustainable energy initiatives within the West African context.",
+            skills: ["Policy Analysis", "Renewable Energy", "Research", "Advocacy", "Stakeholder Engagement"],
+            match: "96% Match",
+            image: "assets/web/landscape.jpg"
         },
         {
             id: "freelance-policy",
@@ -89,10 +89,10 @@ const resumeData = {
             company: "Freelance",
             date: "May 2020 – Aug 2020",
             type: "Indie Favorite",
-            description: "Conducted in-depth policy analysis assessing the socio-economic implications of Chinese investments and partnerships across Africa. Collaborated with interdisciplinary teams to formulate evidence-based recommendations.",
-            skills: ["Research", "Socio-economic Analysis", "Policy", "Strategy"],
-            match: "90% Match",
-            image: null
+            description: "<strong>Situation:</strong> Increasing Chinese investments in Africa necessitated an in-depth understanding of their socio-economic implications.<br><br><strong>Task:</strong> Assess the dynamics of Chinese-African relations, including trade agreements, infrastructure projects, and technology transfers.<br><br><strong>Action:</strong> Conducted in-depth policy analysis and research on investments in various sectors. Collaborated with interdisciplinary teams and stakeholders to formulate evidence-based recommendations.<br><br><strong>Result:</strong> Identified key opportunities and challenges, delivering strategic approaches for maximizing the benefits of Chinese engagement while mitigating potential vulnerabilities.",
+            skills: ["Research", "Socio-economic Analysis", "Policy", "Strategy", "Interdisciplinary Collaboration"],
+            match: "94% Match",
+            image: "assets/web/lens.jpg"
         },
         {
             id: "satellite-lab",
@@ -100,10 +100,21 @@ const resumeData = {
             company: "University of Richmond",
             date: "Sept 2019 – May 2023",
             type: "Cult Classic",
-            description: "Applied advanced image processing techniques and spatial analysis using QGIS and ArcGIS. Designed interactive dashboards using Tableau Desktop. Utilized SQL Server extensively to query large geospatial datasets, achieving a 15% efficiency gain.",
-            skills: ["ArcGIS", "QGIS", "Tableau", "Spatial Analysis", "SQL"],
+            description: "<strong>Situation:</strong> Various analytical assignments required optimal application of satellite imaging technology for data intelligence.<br><br><strong>Task:</strong> Lead project planning and execution to guarantee punctual delivery of reports and data visualizations.<br><br><strong>Action:</strong> Provided expert consultation on satellite imaging technology. Led project planning and execution. Leveraged a diverse set of tools including Excel, ArcGIS suite, Tableau, Stata, and QGIS for comprehensive data intelligence and analysis.<br><br><strong>Result:</strong> Ensured optimal resource deployment, delivering comprehensive data intelligence that contributed directly to informed project management decisions.",
+            skills: ["ArcGIS", "QGIS", "Tableau", "Stata", "Spatial Analysis"],
             match: "95% Match",
-            image: null
+            image: "assets/web/mountains.jpg"
+        },
+        {
+            id: "giddings-foundation",
+            title: "Member for the Board of Advisors",
+            company: "The Giddings Foundation",
+            date: "May 2016 – May 2019",
+            type: "Classic",
+            description: "<strong>Situation:</strong> The foundation required high-level strategic guidance to advance its mission in community development and education.<br><br><strong>Task:</strong> Provide executive oversight, ensure financial accountability, and engage in fundraising strategy to support programs in Colorado Springs.<br><br><strong>Action:</strong> Actively participated in quarterly board meetings, strategic discussions, and key decision-making processes. Engaged in donor cultivation and partnership development.<br><br><strong>Result:</strong> Secured essential resources and support for programs, ensuring organizational transparency and alignment with stated long-term community development objectives.",
+            skills: ["Strategic Guidance", "Executive Oversight", "Fundraising", "Partnership Development"],
+            match: "93% Match",
+            image: "assets/web/aerial.jpg"
         }
     ],
     education: [
@@ -292,7 +303,7 @@ function openModal(item) {
     document.getElementById('modal-title').textContent = item.title;
     document.getElementById('modal-match').textContent = item.match;
     document.getElementById('modal-date').textContent = item.date;
-    document.getElementById('modal-desc').textContent = item.description;
+    document.getElementById('modal-desc').innerHTML = item.description;
     document.getElementById('modal-company').textContent = item.company;
     document.getElementById('modal-skills').textContent = item.skills.join(', ');
     document.getElementById('modal-type').textContent = item.type;
@@ -347,6 +358,53 @@ infoToast.addEventListener('click', () => {
 });
 
 /* ============================================
+   AUDIO CONTROLS
+   ============================================ */
+function initAudio() {
+    const bgMusic = document.getElementById('bg-music');
+    const jingle = document.getElementById('intro-jingle');
+    const soundToggle = document.getElementById('sound-toggle');
+    const soundOnIcon = document.getElementById('sound-on-icon');
+    const soundOffIcon = document.getElementById('sound-off-icon');
+    
+    let hasInteracted = false;
+    let isMuted = false;
+
+    const toggleSound = (e) => {
+        if (e) e.stopPropagation();
+        isMuted = !isMuted;
+        bgMusic.muted = isMuted;
+        jingle.muted = isMuted;
+        
+        soundOnIcon.style.display = isMuted ? 'none' : 'block';
+        soundOffIcon.style.display = isMuted ? 'block' : 'none';
+    };
+
+    const playIntro = () => {
+        if (hasInteracted) return;
+        hasInteracted = true;
+
+        // Play jingle
+        jingle.volume = 0.6;
+        jingle.play().catch(e => console.log("Audio play blocked", e));
+
+        // Start background music after jingle or immediately if jingle fails
+        setTimeout(() => {
+            bgMusic.volume = 0.2;
+            bgMusic.play().catch(e => console.log("BG Audio play blocked", e));
+        }, 1200);
+
+        // Remove listener
+        document.removeEventListener('click', playIntro);
+        document.removeEventListener('keydown', playIntro);
+    };
+
+    soundToggle.addEventListener('click', toggleSound);
+    document.addEventListener('click', playIntro);
+    document.addEventListener('keydown', playIntro);
+}
+
+/* ============================================
    INITIALIZE
    ============================================ */
 document.addEventListener('DOMContentLoaded', () => {
@@ -355,4 +413,6 @@ document.addEventListener('DOMContentLoaded', () => {
     renderPosters('education-posters', resumeData.education);
     renderPosters('certifications-posters', resumeData.certifications);
     renderPosters('competencies-posters', resumeData.competencies);
+
+    initAudio();
 });
