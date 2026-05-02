@@ -1,0 +1,3 @@
+- [x] Change website name back to HansonFlix
+- [x] Update Skills and Competencies section with full details
+- [x] Commit and push changes to GitHub

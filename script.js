@@ -178,13 +178,24 @@ const resumeData = {
     ],
     competencies: [
         {
+            id: "comp-project-management",
+            title: "Project Management",
+            company: "Operations",
+            date: "Core",
+            type: "Behind the Scenes",
+            description: "Ability to create comprehensive project plans, define goals, set timelines, and allocate resources effectively. Competence in budgeting, tracking expenses, and managing stakeholders while adapting to changing requirements.",
+            skills: ["Project Planning", "Budgeting", "Time Management", "Stakeholder Management", "Adaptability"],
+            match: "100% Match",
+            image: null
+        },
+        {
             id: "comp-leadership",
-            title: "Leadership & Group Dynamics",
+            title: "Leadership & Communication",
             company: "Soft Skills",
             date: "Core",
             type: "Behind the Scenes",
-            description: "Capability to lead and motivate cross-functional teams, delegate tasks, and facilitate collaboration. Strong verbal and written communication skills to articulate project objectives clearly.",
-            skills: ["Leadership", "Communication", "Teamwork", "Collaboration"],
+            description: "Capability to lead and motivate cross-functional teams, delegate tasks, and facilitate collaboration. Strong verbal and written communication skills. Ability to negotiate, resolve conflicts, and make informed decisions.",
+            skills: ["Leadership", "Communication", "Negotiation", "Conflict Resolution", "Decision Making"],
             match: "100% Match",
             image: null
         },
@@ -194,8 +205,19 @@ const resumeData = {
             company: "Operations",
             date: "Core",
             type: "Behind the Scenes",
-            description: "Proficiency in identifying potential risks, developing mitigation strategies, and creating contingency plans. Understanding of quality standards and assurance processes throughout the project lifecycle.",
-            skills: ["Risk Management", "Quality Assurance", "Contingency Planning"],
+            description: "Proficiency in identifying potential risks, developing mitigation strategies, and creating contingency plans. Understanding of quality standards and maintaining assurance processes.",
+            skills: ["Risk Management", "Quality Management", "Contingency Planning"],
+            match: "100% Match",
+            image: null
+        },
+        {
+            id: "comp-data-analysis",
+            title: "Data Analysis & Database Management",
+            company: "Analytics",
+            date: "Core",
+            type: "Behind the Scenes",
+            description: "Proficiency in data analysis techniques, data cleaning, transformation, and SQL database management. Familiarity with visualization tools like Tableau and Power BI, and statistical software for modeling.",
+            skills: ["Data Analysis", "SQL", "Data Cleaning", "Data Visualization", "Statistical Software"],
             match: "100% Match",
             image: null
         },
@@ -205,8 +227,8 @@ const resumeData = {
             company: "Analytics",
             date: "Core",
             type: "Behind the Scenes",
-            description: "Skill in translating complex data analysis into clear and concise narratives. Understanding of statistical concepts such as hypothesis testing, regression analysis, and probability theory.",
-            skills: ["Data Storytelling", "Statistical Knowledge", "Problem Solving", "Critical Thinking"],
+            description: "Skill in translating complex data into clear narratives for non-technical stakeholders. Deep understanding of statistical concepts, hypothesis testing, and probability. Strong problem-solving and critical thinking abilities. Maintaining domain knowledge and continuous learning.",
+            skills: ["Data Storytelling", "Statistical Knowledge", "Problem Solving", "Critical Thinking", "Continuous Learning"],
             match: "100% Match",
             image: null
         }
