@@ -70,6 +70,37 @@ const resumeData = {
             type: "Documentary",
             description: "Bachelor of Arts in Leadership.",
             skills: ["Leadership", "Management", "Strategy"],
+        }
+    ],
+    certifications: [
+        {
+            id: "cert-pm",
+            title: "Project Management Expert",
+            company: "Methodologies & Tools",
+            date: "Current",
+            type: "Special Feature",
+            description: "Advanced proficiency in Agile, Scrum, JIRA, Salesforce, MS Project, and Microsoft Suite for directing cross-functional teams and ensuring on-time delivery.",
+            skills: ["Agile", "Scrum", "JIRA", "Salesforce"],
+            match: "100% Match"
+        },
+        {
+            id: "cert-data",
+            title: "Data Analytics & BI Master",
+            company: "Analytics Stack",
+            date: "Current",
+            type: "Special Feature",
+            description: "Expert level command of Power BI, DAX, Power Query Editor, Tableau Desktop/Server, Excel, SQL, and Python for transforming raw data into actionable insights.",
+            skills: ["Power BI", "Tableau", "SQL", "Python", "DAX"],
+            match: "100% Match"
+        },
+        {
+            id: "cert-geo",
+            title: "Geospatial Information Systems",
+            company: "GIS Suite",
+            date: "Current",
+            type: "Special Feature",
+            description: "Specialized in spatial analysis and image processing utilizing the ESRI suite, ArcGIS, and QGIS for complex environmental and logistical reporting.",
+            skills: ["ESRI", "ArcGIS", "QGIS", "Spatial Analysis"],
             match: "100% Match"
         }
     ]
@@ -139,4 +170,5 @@ modalOverlay.addEventListener('click', (e) => {
 document.addEventListener('DOMContentLoaded', () => {
     renderPosters('experience-posters', resumeData.roles);
     renderPosters('education-posters', resumeData.education);
+    renderPosters('certifications-posters', resumeData.certifications);
 });
