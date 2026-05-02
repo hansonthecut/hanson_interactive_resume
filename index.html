@@ -3,34 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frank Hanson - Netflix Interactive Resume</title>
+    <meta name="description" content="Frank Hanson — Operations & Data Analytics Leader. Interactive resume showcasing professional experience, certifications, and creative production work.">
+    <title>Frank Hanson — Interactive Resume</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navbar -->
     <nav class="navbar" id="navbar">
-        <div class="navbar-brand">HANSONFLIX</div>
-        <div class="navbar-nav">
+        <a href="#" class="navbar-brand" id="navbar-brand">HANSONFLIX</a>
+        
+        <!-- Hamburger Button (mobile only) -->
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
+        <div class="navbar-nav" id="navbar-nav">
             <a href="#" class="nav-link">Home</a>
             <a href="#experience" class="nav-link">Experience</a>
             <a href="#education" class="nav-link">Education</a>
-            <a href="mailto:fiifi93@gmail.com" class="nav-link">Contact</a>
+            <a href="#certifications" class="nav-link">Skills</a>
+            <a href="#competencies" class="nav-link">Strengths</a>
+            <a href="mailto:fiifi93@gmail.com" class="nav-link nav-link-cta">Contact</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="hero">
+    <header class="hero" id="hero">
+        <video class="hero-video" autoplay loop muted playsinline poster="assets/DSC09402.jpg">
+            <source src="assets/Hybrid%20reel%204K.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
         <div class="hero-content">
+            <div class="hero-maturity-badge">TOP 10</div>
             <h1 class="hero-title">Frank Hanson</h1>
             <h2 class="hero-subtitle">Operations & Data Analytics Leader</h2>
-            <p class="hero-description">Accomplished Operations Manager and Data Analyst blending Amazon-level logistics expertise with advanced Business Intelligence (SQL, Python, Power BI). Proven leader navigating complex challenges.</p>
+            <p class="hero-description">Accomplished Operations Manager and Data Analyst blending Amazon-level logistics expertise with advanced Business Intelligence. Proven leader navigating complex challenges across E-commerce, energy policy, and geospatial analytics.</p>
             <div class="hero-buttons">
-                <button class="btn btn-play" onclick="window.open('https://www.linkedin.com/in/frank-hanson-1595a0186')">
-                    <span class="icon">▶</span> Connect
-                </button>
-                <button class="btn btn-info" onclick="alert('Email: fiifi93@gmail.com\\nPhone: 719-663-5020')">
-                    <span class="icon">ⓘ</span> More Info
+                <a href="https://www.linkedin.com/in/frank-hanson-1595a0186" target="_blank" rel="noopener noreferrer" class="btn btn-play" id="btn-connect">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                    <span>Connect</span>
+                </a>
+                <button class="btn btn-info" id="btn-more-info">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    <span>More Info</span>
                 </button>
             </div>
         </div>
@@ -38,41 +58,64 @@
 
     <!-- Main Content Sliders -->
     <main>
+        <!-- Portfolio Showcase -->
+        <section class="row" id="portfolio">
+            <h2 class="row-title">Portfolio Showcase</h2>
+            <div class="row-posters row-posters-lg" id="portfolio-posters">
+                <!-- Injected via JS -->
+            </div>
+        </section>
+
         <section class="row" id="experience">
-            <h2 class="row-title">Trending Now (Experience)</h2>
+            <h2 class="row-title">Trending Now — Experience</h2>
             <div class="row-posters" id="experience-posters">
                 <!-- Injected via JS -->
             </div>
         </section>
 
         <section class="row" id="education">
-            <h2 class="row-title">Critically Acclaimed (Education & Skills)</h2>
+            <h2 class="row-title">Critically Acclaimed — Education</h2>
             <div class="row-posters" id="education-posters">
                 <!-- Injected via JS -->
             </div>
         </section>
 
         <section class="row" id="certifications">
-            <h2 class="row-title">Special Features (Certifications & Tools)</h2>
+            <h2 class="row-title">Special Features — Certifications & Tools</h2>
             <div class="row-posters" id="certifications-posters">
                 <!-- Injected via JS -->
             </div>
         </section>
 
         <section class="row" id="competencies">
-            <h2 class="row-title">Behind the Scenes (Competencies & Strengths)</h2>
+            <h2 class="row-title">Behind the Scenes — Competencies</h2>
             <div class="row-posters" id="competencies-posters">
                 <!-- Injected via JS -->
             </div>
         </section>
     </main>
 
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-brand">HANSONFLIX</p>
+            <div class="footer-links">
+                <a href="mailto:fiifi93@gmail.com">fiifi93@gmail.com</a>
+                <a href="tel:7196635020">719-663-5020</a>
+                <a href="https://www.linkedin.com/in/frank-hanson-1595a0186" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+            <p class="footer-copy">&copy; 2026 Frank Hanson. All rights reserved.</p>
+        </div>
+    </footer>
+
     <!-- Modal -->
     <div class="modal-overlay" id="modal-overlay">
         <div class="modal-content" id="modal-content">
-            <button class="modal-close" id="modal-close">✕</button>
+            <button class="modal-close" id="modal-close" aria-label="Close modal">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
             
-            <div class="modal-header">
+            <div class="modal-header" id="modal-header-bg">
                 <div class="modal-header-content">
                     <h1 class="modal-title" id="modal-title">Title</h1>
                     <div class="modal-meta">
@@ -89,19 +132,28 @@
                 </div>
                 <div class="modal-tags">
                     <div class="tag-group">
-                        <span>Cast (Company): </span>
+                        <span class="tag-label">Cast: </span>
                         <span class="tag-values" id="modal-company">Company</span>
                     </div>
                     <div class="tag-group">
-                        <span>Genres (Skills): </span>
+                        <span class="tag-label">Genres: </span>
                         <span class="tag-values" id="modal-skills">Skills</span>
                     </div>
                     <div class="tag-group">
-                        <span>This show is: </span>
+                        <span class="tag-label">This show is: </span>
                         <span class="tag-values" id="modal-type">Type</span>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- Contact Info Toast -->
+    <div class="toast" id="info-toast">
+        <div class="toast-body">
+            <p><strong>Email:</strong> fiifi93@gmail.com</p>
+            <p><strong>Phone:</strong> 719-663-5020</p>
+            <p><strong>LinkedIn:</strong> linkedin.com/in/frank-hanson-1595a0186</p>
         </div>
     </div>
 
