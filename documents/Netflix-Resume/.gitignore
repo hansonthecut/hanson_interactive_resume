@@ -1,0 +1,21 @@
+# OS files
+.DS_Store
+
+# Raw 4K assets (too large for GitHub — max 100MB per file)
+assets/*.mp4
+assets/*.mov
+assets/*.jpg
+assets/*.jpeg
+assets/*.png
+assets/*.JPEG
+assets/*.PNG
+
+# Raw portrait originals
+assets/Portraits of me/
+
+# Keep web-optimized versions (these are under 500KB each)
+!assets/web/
+!assets/web/**
+
+# Old React source (no longer needed)
+src/
