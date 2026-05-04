@@ -46,7 +46,7 @@ const resumeData = {
             description: "Full documentary-style travel film capturing Guatemalan culture, landscapes, and daily life through cinematic compositions and local storytelling.",
             skills: ["Documentary", "Travel Film", "Storytelling", "DaVinci Resolve"],
             match: "96% Match",
-            image: "Assets/web/wildlife.jpg"
+            image: "assets/web/wildlife.jpg"
         }
     ],
     roles: [
@@ -59,7 +59,7 @@ const resumeData = {
             description: "<strong>Situation:</strong> Managing diverse teams in a high-volume Amazon warehouse environment required maintaining optimal performance and safety standards.<br><br><strong>Task:</strong> Needed to optimize complex workflows, reduce reporting times, and improve cost-efficiency while ensuring 99%+ safety compliance.<br><br><strong>Action:</strong> Lead, mentor, and manage diverse teams. Developed and executed strategic operational plans exceeding daily goals. Orchestrated AI training workshops for executive stakeholders, empowering leadership to leverage AI protocols. Spearheaded a special project for a Fortune 500 partner, developing a comprehensive workforce skills-tracking system. Championed a culture of safety and accountability leveraging data analytics.<br><br><strong>Result:</strong> Achieved 99%+ safety compliance, resulted in a 20% reduction in project delivery time via the skills-tracking system, and optimized end-to-end logistics for a 15% increase in cost-efficiency.",
             skills: ["Operations", "AI Systems", "SQL", "Python", "Logistics", "Team Leadership"],
             match: "99% Match",
-            image: "Assets/web/studio.jpg"
+            image: "assets/web/studio.jpg"
         },
         {
             id: "bridgepark",
