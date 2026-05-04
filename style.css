@@ -334,6 +334,7 @@ button {
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: center 15%; /* Ensures face is not cut off at the top */
   border: 3px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
   flex-shrink: 0;
@@ -434,7 +435,7 @@ button {
    CONTENT ROWS
    ============================================ */
 main {
-  margin-top: -80px;
+  margin-top: -40px; /* Reduced from -80px to prevent overlap with hero text */
   position: relative;
   z-index: 10;
   padding-bottom: var(--space-3xl);
@@ -456,7 +457,8 @@ main {
 .row-title {
   font-size: var(--text-lg);
   font-weight: 700;
-  margin-bottom: var(--space-md);
+  margin-top: var(--space-xl); /* Added breathing room at the top of rows */
+  margin-bottom: var(--space-lg); /* Increased from space-md */
   color: var(--hf-gray-100);
   letter-spacing: -0.01em;
 }
