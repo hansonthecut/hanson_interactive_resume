@@ -21,7 +21,7 @@ To ensure smooth deployment to GitHub Pages (which is Linux-based and case-sensi
 | **Paths** | `/Users/frank/Assets/...` | `assets/...` | Always use relative paths so the code works on any machine/server. |
 
 ## 3. Pending Actions
-- [ ] **Final Push:** Stage all renamed files and the new video, then push to `main`.
+- [x] **Final Push:** Stage all renamed files and the new video, then push to `main`.
 - [ ] **Verify Live Site:** Check GitHub Actions to ensure the build completes and assets load on the `.io` domain.
 - [ ] **Cleanup:** Remove the old 4K video from the local `assets/` folder if no longer needed (it's currently ignored by Git).
 
