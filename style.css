@@ -333,8 +333,10 @@ button {
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
-  object-position: center top !important; /* Forces the top of the image to the top of the circle */
-  padding: 0 !important; /* Removed padding to maximize photo size */
+  object-position: center top !important; 
+  transform: scale(1.2); /* Zoom in to focus on face and head */
+  transform-origin: top center; /* Ensures zoom keeps the top in view */
+  padding: 0 !important;
   background: rgba(255, 255, 255, 0.1);
   border: 3px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
