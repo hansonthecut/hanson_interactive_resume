@@ -265,13 +265,11 @@ button {
    ============================================ */
 .hero {
   position: relative;
-  height: 85vh;
-  min-height: 500px;
-  max-height: 900px;
+  min-height: 95vh;
   width: 100%;
-  display: flex;
-  align-items: flex-end;
+  display: block; /* Switched from flex to block to ensure natural flow */
   overflow: hidden;
+  padding-top: 10vh;
 }
 
 .hero-bg-image {
@@ -317,8 +315,9 @@ button {
 .hero-content {
   position: relative;
   z-index: 5;
-  padding: var(--space-3xl) var(--content-padding);
+  padding: 0 var(--content-padding) 150px; /* Massive bottom padding to prevent overlap */
   max-width: 650px;
+  margin-bottom: 100px;
 }
 
 /* Hero profile — Avatar + text side by side */
@@ -334,7 +333,9 @@ button {
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
-  object-position: center 15%; /* Ensures face is not cut off at the top */
+  object-position: center 40%; /* Shifted head down into the circle */
+  padding: 8px; /* Extra padding to prevent hair touching the top border */
+  background: rgba(255, 255, 255, 0.1);
   border: 3px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
   flex-shrink: 0;
@@ -391,6 +392,7 @@ button {
   display: flex;
   gap: var(--space-md);
   flex-wrap: wrap;
+  margin-bottom: 200px !important; /* Force a massive gap below buttons */
 }
 
 /* ============================================
@@ -435,10 +437,12 @@ button {
    CONTENT ROWS
    ============================================ */
 main {
-  margin-top: -40px; /* Reduced from -80px to prevent overlap with hero text */
+  margin-top: 0 !important; 
+  padding-top: 200px !important; /* Extremely aggressive spacing */
   position: relative;
   z-index: 10;
   padding-bottom: var(--space-3xl);
+  background-color: var(--hf-black); /* Ensure solid background to cover hero overlap if any */
 }
 
 .row {
@@ -986,8 +990,9 @@ main {
 
   /* Hero */
   .hero {
-    height: 75vh;
-    min-height: 420px;
+    height: auto; /* Removed fixed 75vh which caused overlaps */
+    min-height: 85vh;
+    padding-bottom: 80px;
   }
 
   .hero-title {
@@ -1009,6 +1014,7 @@ main {
   .hero-content {
     max-width: 100%;
     padding-right: var(--content-padding);
+    padding-bottom: 80px; /* Added space for buttons on mobile */
   }
 
   /* Posters */
