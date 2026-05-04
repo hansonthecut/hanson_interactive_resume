@@ -11,6 +11,7 @@ This document tracks all major technical changes, bug fixes, and feature impleme
 ### Fixed
 - **Portrait Framing**: Adjusted the hero portrait multiple times, ultimately removing the circular avatar next to the title as requested and optimizing the hero layout.
 - **Section Overlap**: Increased vertical spacing between the hero section and content rows to `250px-300px` to prevent visual clutter and overlapping elements.
+- **CI/CD Build Environment**: Proactively upgraded the deployment workflow to Node.js 24 by creating a custom GitHub Action (`pages.yml`) and setting `FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true`. This future-proofs the build and resolves deprecation warnings.
 - **CI/CD Build Failures**: 
     - Resolved `fatal: No url found for submodule` error by removing broken submodule references in the Git index.
     - Fixed 404 image errors on GitHub Pages by standardizing folder names to lowercase (`assets/`, `documents/`) and correcting Git index case sensitivity.
