@@ -383,8 +383,8 @@ infoToast.addEventListener('click', () => {
    AUDIO CONTROLS
    ============================================ */
 function initAudio() {
-    const bgMusic = document.getElementById('bg-music');
-    const jingle = document.getElementById('intro-jingle');
+    const introAudio = document.getElementById('intro-audio');
+    const cinematicAudio = document.getElementById('cinematic-audio');
     const soundToggle = document.getElementById('sound-toggle');
     const soundOnIcon = document.getElementById('sound-on-icon');
     const soundOffIcon = document.getElementById('sound-off-icon');
@@ -395,35 +395,37 @@ function initAudio() {
     const toggleSound = (e) => {
         if (e) e.stopPropagation();
         isMuted = !isMuted;
-        bgMusic.muted = isMuted;
-        jingle.muted = isMuted;
+        introAudio.muted = isMuted;
+        cinematicAudio.muted = isMuted;
         
         soundOnIcon.style.display = isMuted ? 'none' : 'block';
         soundOffIcon.style.display = isMuted ? 'block' : 'none';
     };
 
-    const playIntro = () => {
+    const startAudioSequence = () => {
         if (hasInteracted) return;
         hasInteracted = true;
 
-        // Play jingle
-        jingle.volume = 0.6;
-        jingle.play().catch(e => console.log("Audio play blocked", e));
+        // 1. Play Intro
+        introAudio.volume = 0.7;
+        introAudio.play().catch(e => console.log("Intro audio blocked", e));
 
-        // Start background music after jingle or immediately if jingle fails
-        setTimeout(() => {
-            bgMusic.volume = 0.2;
-            bgMusic.play().catch(e => console.log("BG Audio play blocked", e));
-        }, 1200);
+        // 2. When Intro ends, wait 3 seconds then play Cinematic
+        introAudio.onended = () => {
+            setTimeout(() => {
+                cinematicAudio.volume = 0.5;
+                cinematicAudio.play().catch(e => console.log("Cinematic audio blocked", e));
+            }, 3000);
+        };
 
         // Remove listener
-        document.removeEventListener('click', playIntro);
-        document.removeEventListener('keydown', playIntro);
+        document.removeEventListener('click', startAudioSequence);
+        document.removeEventListener('keydown', startAudioSequence);
     };
 
     soundToggle.addEventListener('click', toggleSound);
-    document.addEventListener('click', playIntro);
-    document.addEventListener('keydown', playIntro);
+    document.addEventListener('click', startAudioSequence);
+    document.addEventListener('keydown', startAudioSequence);
 }
 
 /* ============================================
