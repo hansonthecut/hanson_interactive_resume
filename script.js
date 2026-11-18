@@ -5,6 +5,17 @@
 const resumeData = {
     portfolio: [
         {
+            id: "port-cloud-connect",
+            title: "Amazon Cloud Connect",
+            company: "Corporate Event Film & Media Package",
+            date: "2026",
+            type: "Featured",
+            description: "Turnkey corporate media package for Amazon's internal Cloud Connect conference: pre-event kickoff anthem film, mobile cinema interviews, an on-site executive headshot studio, and a sponsorship impact documentary — produced end-to-end through Hansonthecut LLC.",
+            skills: ["Corporate Events", "Executive Headshots", "Documentary", "DaVinci Resolve"],
+            match: "99% Match",
+            image: "assets/web/event.jpg"
+        },
+        {
             id: "port-concert",
             title: "Live Concert Coverage",
             company: "Event Photography",
@@ -52,13 +63,35 @@ const resumeData = {
     roles: [
         {
             id: "amazon",
-            title: "Operations & Logistic Manager",
-            company: "Amazon",
+            title: "Area Manager & AI Subject Matter Expert",
+            company: "Amazon — SDC1, Springfield VA",
             date: "May 2023 – Present",
             type: "Blockbuster",
-            description: "<strong>Situation:</strong> Managing diverse teams in a high-volume Amazon warehouse environment required maintaining optimal performance and safety standards.<br><br><strong>Task:</strong> Needed to optimize complex workflows, reduce reporting times, and improve cost-efficiency while ensuring 99%+ safety compliance.<br><br><strong>Action:</strong> Lead, mentor, and manage diverse teams. Developed and executed strategic operational plans exceeding daily goals. Orchestrated AI training workshops for executive stakeholders, empowering leadership to leverage AI protocols. Spearheaded a special project for a Fortune 500 partner, developing a comprehensive workforce skills-tracking system. Championed a culture of safety and accountability leveraging data analytics.<br><br><strong>Result:</strong> Achieved 99%+ safety compliance, resulted in a 20% reduction in project delivery time via the skills-tracking system, and optimized end-to-end logistics for a 15% increase in cost-efficiency.",
-            skills: ["Operations", "AI Systems", "SQL", "Python", "Logistics", "Team Leadership"],
+            description: "<strong>Situation:</strong> A high-volume Amazon fulfillment operation needed stronger cost discipline, faster planning cycles, and leaders who could actually use AI — not just talk about it.<br><br><strong>Task:</strong> Run daily operations for diverse teams while serving as the site's AI/technical subject matter expert: automate manual planning work, lift cost efficiency, and raise AI fluency across the leadership bench.<br><br><strong>Action:</strong> Built an AI agent and custom tooling that automates worked-hours tracking and headcount planning. Led AI training for 600+ leaders from L4 to L8. Serve on the Black Employee Network boards (BENDMV and BENTECH), leading the network's AI training work. Champion a culture of safety and accountability grounded in data.<br><br><strong>Result:</strong> The headcount planner improved cost efficiency by 15%. Teams run at 100% engagement with zero safety recordables.",
+            skills: ["Operations Leadership", "AI Enablement", "Automation", "SQL", "Python", "Team Leadership"],
             match: "99% Match",
+            image: "assets/web/studio.jpg"
+        },
+        {
+            id: "hansonthecut",
+            title: "Founder, Owner & Director of Photography",
+            company: "Hansonthecut LLC",
+            date: "Current",
+            type: "Blockbuster",
+            description: "<strong>Situation:</strong> Corporate and conference clients need event media that looks like a production company delivered it — films, executive headshots, and documentaries on deadline, without agency overhead.<br><br><strong>Task:</strong> Build and run a full-service media business: win the work, produce it end-to-end, and deliver at a premium standard.<br><br><strong>Action:</strong> Direct photography and cinematography for corporate events and conferences, including Amazon's Cloud Connect conference — kickoff anthem film, executive interview cinema, an on-site headshot studio, and a sponsorship documentary. Built proprietary post-production software (the HansOn suite) and AI-assisted editing pipelines that keep turnaround fast and quality consistent.<br><br><strong>Result:</strong> A growing corporate client base, repeat conference engagements, and a product line of professional media tools sold to other creators.",
+            skills: ["Corporate Events", "Cinematography", "Executive Headshots", "Business Development", "DaVinci Resolve"],
+            match: "99% Match",
+            image: "assets/web/branding.jpg"
+        },
+        {
+            id: "church-media",
+            title: "Director of Media",
+            company: "Church Media Ministry",
+            date: "Current",
+            type: "Critically Acclaimed",
+            description: "<strong>Situation:</strong> A growing church moving into a new facility needed a media operation built from the ground up — cameras, lighting, audio, and a volunteer team that could run it every week.<br><br><strong>Task:</strong> Direct the end-to-end media studio rollout for the new facility and lead the team that produces live broadcasts and service media.<br><br><strong>Action:</strong> Lead studio buildouts across camera, lighting, and audio; own procurement and infrastructure decisions; design the live broadcast workflow; recruit, train, and schedule the media team.<br><br><strong>Result:</strong> A functioning studio and broadcast operation in the new facility, run by a trained team on a repeatable weekly workflow.",
+            skills: ["Studio Buildout", "Live Broadcast", "Team Leadership", "Procurement", "Production Workflows"],
+            match: "98% Match",
             image: "assets/web/studio.jpg"
         },
         {
@@ -142,6 +175,17 @@ const resumeData = {
         }
     ],
     certifications: [
+        {
+            id: "cert-ai",
+            title: "AI Enablement & Automation",
+            company: "Applied AI Systems",
+            date: "Current",
+            type: "Special Feature",
+            description: "Site-level AI subject matter expertise at Amazon: designed and built an AI agent and custom tooling for worked-hours tracking and headcount planning, and delivered AI training to 600+ leaders (L4–L8). Builds multi-agent automation systems that run real business operations.",
+            skills: ["AI Agents", "Automation", "Python", "Training & Enablement", "Process Design"],
+            match: "100% Match",
+            image: "assets/web/studio.jpg"
+        },
         {
             id: "cert-pm",
             title: "Project Management Expert",
