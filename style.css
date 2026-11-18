@@ -5,22 +5,29 @@
    ============================================ */
 
 :root {
-  /* Color Palette */
-  --hf-red: #F5F5F4; /* HansOn accent (monochrome) */
-  --hf-red-hover: #FFFFFF;
-  --hf-black: #0A0A0B; /* --bg */
-  --hf-dark: #131315; /* --surface */
-  --hf-card: #1D1D20; /* --surface-raised */
-  --hf-border: #2A2A2E; /* --border */
-  --hf-white: #F5F5F4; /* --text-primary */
-  --hf-gray-100: #E9E9EB;
-  --hf-gray-200: #A7A7AE; /* --text-secondary */
-  --hf-gray-300: #6E6E76; /* --text-faint */
-  --hf-gray-400: #3D3D43; /* --border-strong */
-  --hf-green: #4ADE80; /* --success */
-  --hf-on-accent: #111113; /* --text-on-accent */
-  --hf-focus: #7DD3FC; /* --focus */
-  --hf-sunken: #0E0E10; /* --surface-sunken */
+  /* Spectrum theme — the HansOn master template signature.
+     --t is a continuous theme position: 0 = light, 0.5 = neutral grey, 1 = dark.
+     Every token interpolates in OKLCH between its light and dark stops,
+     so the whole palette travels one perceptual path through grey.
+     Default (and pre-JS paint) is Dark, t = 1. */
+  --t: 1;
+
+  /* Color Palette — each token: color-mix(in oklch, <light>, <dark> t) */
+  --hf-red: color-mix(in oklch, #111113, #F5F5F4 calc(var(--t) * 100%)); /* --accent */
+  --hf-red-hover: color-mix(in oklch, #000000, #FFFFFF calc(var(--t) * 100%)); /* accent hover */
+  --hf-black: color-mix(in oklch, #F2F2F3, #0A0A0B calc(var(--t) * 100%)); /* --bg */
+  --hf-dark: color-mix(in oklch, #FFFFFF, #131315 calc(var(--t) * 100%)); /* --surface */
+  --hf-card: color-mix(in oklch, #E9E9EB, #1D1D20 calc(var(--t) * 100%)); /* --surface-raised */
+  --hf-border: color-mix(in oklch, #D8D8DB, #2A2A2E calc(var(--t) * 100%)); /* --border */
+  --hf-white: color-mix(in oklch, #111113, #F5F5F4 calc(var(--t) * 100%)); /* --text-primary */
+  --hf-gray-100: color-mix(in oklch, #26262B, #E9E9EB calc(var(--t) * 100%)); /* near-primary text */
+  --hf-gray-200: color-mix(in oklch, #5C5C63, #A7A7AE calc(var(--t) * 100%)); /* --text-secondary */
+  --hf-gray-300: color-mix(in oklch, #8E8E96, #6E6E76 calc(var(--t) * 100%)); /* --text-faint */
+  --hf-gray-400: color-mix(in oklch, #B9B9BE, #3D3D43 calc(var(--t) * 100%)); /* --border-strong */
+  --hf-green: color-mix(in oklch, #16A34A, #4ADE80 calc(var(--t) * 100%)); /* --success */
+  --hf-on-accent: color-mix(in oklch, #FFFFFF, #111113 calc(var(--t) * 100%)); /* --text-on-accent */
+  --hf-focus: color-mix(in oklch, #2563EB, #7DD3FC calc(var(--t) * 100%)); /* --focus */
+  --hf-sunken: color-mix(in oklch, #EFEFEF, #0E0E10 calc(var(--t) * 100%)); /* --surface-sunken */
 
   /* Spacing — Apple HIG 8pt grid */
   --space-xs: 4px;
@@ -109,7 +116,7 @@ button {
 }
 
 .navbar.scrolled {
-  background: rgba(10, 10, 11, 0.92);
+  background: color-mix(in oklch, var(--hf-black) 92%, transparent);
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
   border-bottom: 1px solid var(--hf-border);
@@ -166,7 +173,7 @@ button {
   position: absolute;
   top: calc(100% + 10px);
   right: 0;
-  background: rgba(29, 29, 32, 0.95);
+  background: color-mix(in oklch, var(--hf-card) 95%, transparent);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--hf-border);
@@ -228,7 +235,7 @@ button {
 }
 
 .nav-icon-btn:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: color-mix(in oklch, var(--hf-white) 10%, transparent);
 }
 
 /* Hamburger — hidden on desktop */
@@ -582,7 +589,7 @@ main {
   position: absolute;
   top: var(--space-md);
   right: var(--space-md);
-  background: rgba(10, 10, 11, 0.75);
+  background: color-mix(in oklch, var(--hf-black) 75%, transparent);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   color: var(--hf-white);
@@ -600,7 +607,7 @@ main {
 
 .modal-close:hover {
   transform: scale(1.1);
-  background: rgba(40, 40, 40, 0.9);
+  background: color-mix(in oklch, var(--hf-card) 90%, transparent);
 }
 
 .modal-header {
@@ -696,7 +703,7 @@ main {
   position: fixed;
   bottom: var(--space-xl);
   right: var(--space-xl);
-  background: rgba(30, 30, 30, 0.92);
+  background: color-mix(in oklch, var(--hf-dark) 92%, transparent);
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
   border: 1px solid var(--hf-border);
@@ -905,7 +912,7 @@ main {
     left: 0;
     right: 0;
     flex-direction: column;
-    background: rgba(10, 10, 11, 0.97);
+    background: color-mix(in oklch, var(--hf-black) 97%, transparent);
     backdrop-filter: saturate(180%) blur(20px);
     -webkit-backdrop-filter: saturate(180%) blur(20px);
     padding: var(--space-lg) var(--content-padding);
@@ -966,12 +973,6 @@ main {
 
   .about-list li {
     text-align: left;
-  }
-    pointer-events: auto;
-    background: rgba(255, 255, 255, 0.05);
-    margin-top: var(--space-sm);
-    box-shadow: none;
-    min-width: unset;
   }
 
   /* Hero */
@@ -1105,4 +1106,132 @@ main {
   height: 3px;
   width: 100%;
   background: linear-gradient(90deg, #F2F2F3 0%, #A7A7AE 38%, #6E6E76 68%, #2A2A2E 100%);
+}
+
+/* ============================================
+   THEME CONTROL — spectrum slider + presets
+   ============================================ */
+.theme-control {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-shrink: 0;
+}
+
+/* The mobile-menu duplicate stays hidden until the hamburger layout */
+.theme-control--mobile {
+  display: none;
+}
+
+.theme-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 120px;
+  height: 6px;
+  border-radius: 3px;
+  border: 1px solid var(--hf-gray-400);
+  background: linear-gradient(90deg, #F2F2F3 0%, #8E8E96 50%, #0A0A0B 100%);
+  outline-offset: 4px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.theme-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--hf-white);
+  border: 2px solid var(--hf-gray-400);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+}
+
+.theme-slider::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--hf-white);
+  border: 2px solid var(--hf-gray-400);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+}
+
+.theme-slider::-moz-range-track {
+  background: transparent;
+}
+
+.theme-presets {
+  display: flex;
+  gap: 4px;
+}
+
+.theme-preset {
+  background: transparent;
+  border: 1px solid var(--hf-border);
+  color: var(--hf-gray-200);
+  font-family: inherit;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  line-height: 1;
+  padding: 6px 9px;
+  border-radius: 999px;
+  white-space: nowrap;
+  transition: color var(--duration-fast) var(--ease-out),
+              background var(--duration-fast) var(--ease-out),
+              border-color var(--duration-fast) var(--ease-out);
+}
+
+.theme-preset:hover {
+  color: var(--hf-white);
+  border-color: var(--hf-gray-400);
+}
+
+.theme-preset.active {
+  background: var(--hf-red);
+  border-color: var(--hf-red);
+  color: var(--hf-on-accent);
+}
+
+/* Keep the wider navbar from overflowing on smaller desktops */
+@media (max-width: 1280px) {
+  .theme-slider {
+    width: 72px;
+  }
+
+  .theme-preset {
+    padding: 6px 7px;
+  }
+}
+
+/* Inside the hamburger menu: swap to the full-width duplicate */
+@media (max-width: 768px) {
+  .theme-control--nav {
+    display: none;
+  }
+
+  .theme-control--mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-md);
+    width: 100%;
+    padding: var(--space-md) 0;
+    border-bottom: 1px solid var(--hf-border);
+  }
+
+  .theme-control--mobile .theme-slider {
+    width: 100%;
+  }
+
+  .theme-control--mobile .theme-presets {
+    justify-content: space-between;
+  }
+
+  .theme-control--mobile .theme-preset {
+    flex: 1;
+    padding: 8px 4px;
+    text-align: center;
+  }
 }

@@ -276,6 +276,53 @@ const resumeData = {
             match: "100% Match",
             image: "assets/web/branding.jpg"
         }
+    ],
+    innovation: [
+        {
+            id: "mag-bridge",
+            title: "MAG Bridge",
+            company: "Multi-Agent Orchestration System",
+            date: "Current",
+            type: "Innovation",
+            description: "MAG Bridge — the multi-agent orchestration system Frank designed to run his software studio. He directs; the mesh executes. A planning layer breaks product specs into phased builds, a build fleet writes and tests the code, and every phase is verified against evidence before the next begins — payments, publishing, and external sends stay behind his personal approval. Google Workspace is the shared state bus, so every agent works from one source of truth. MAG has shipped three commercial macOS applications and runs the automation behind his media business — while he works full-time at Amazon.",
+            skills: ["Multi-Agent Systems", "Orchestration", "Google Workspace", "Automation", "AI Operations"],
+            match: "100% Match"
+        }
+    ],
+    suite: [
+        {
+            id: "suite-grades",
+            title: "HansOnGrades",
+            company: "HansOn Suite",
+            date: "macOS",
+            type: "Software",
+            description: "Color grading for DaVinci Resolve: an Edit-page effect plus a standalone Edit Studio, per-camera CST presets, one-click looks.",
+            skills: ["DaVinci Resolve", "Color Grading", "CST Presets"],
+            match: "On Gumroad",
+            link: "https://hansonthecut.gumroad.com/"
+        },
+        {
+            id: "suite-enhancer",
+            title: "HansOnEnhancer",
+            company: "HansOn Suite",
+            date: "macOS",
+            type: "Software",
+            description: "Batch photo polish for event photographers: drop in a folder, get delivery-ready images.",
+            skills: ["Photo Editing", "Batch Processing", "Event Photography"],
+            match: "On Gumroad",
+            link: "https://hansonthecut.gumroad.com/"
+        },
+        {
+            id: "suite-match",
+            title: "HansOffMatch",
+            company: "HansOn Suite",
+            date: "macOS",
+            type: "Software",
+            description: "Multicam sync for DaVinci Resolve: absolute-time timeline assembly across cameras, waveform-verified, nothing dropped.",
+            skills: ["DaVinci Resolve", "Multicam Sync", "Waveform Analysis"],
+            match: "On Gumroad",
+            link: "https://hansonthecut.gumroad.com/"
+        }
     ]
 };
 
@@ -292,6 +339,77 @@ const cardGradients = [
     "linear-gradient(135deg, #1E2126 0%, #0D0F13 100%)",
     "linear-gradient(135deg, #2A2A2E 0%, #131315 100%)",
 ];
+
+/* ============================================
+   THEME — Spectrum slider (HansOn master template)
+   t in [0,1]: 0 = light, 0.5 = neutral grey, 1 = dark.
+   One --t custom property drives every token's OKLCH
+   interpolation in style.css. Both navbar control
+   instances (desktop + mobile menu) stay in sync
+   through applyTheme(). Persisted in localStorage.
+   ============================================ */
+(function initTheme() {
+    const STORAGE_KEY = 'hanson-theme';
+    const rootEl = document.documentElement;
+    const sliders = document.querySelectorAll('.theme-slider');
+    const presetButtons = document.querySelectorAll('.theme-preset');
+    const schemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+    // Default on first load: Dark
+    let state = { t: 1, preset: 'dark' };
+    try {
+        const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+        if (saved && typeof saved.t === 'number' && typeof saved.preset === 'string') {
+            state = saved;
+        }
+    } catch (e) { /* no saved theme yet — keep the Dark default */ }
+
+    function systemT() {
+        return schemeQuery.matches ? 1 : 0;
+    }
+
+    function applyTheme(t, preset) {
+        state = { t: t, preset: preset };
+        rootEl.style.setProperty('--t', t);
+        sliders.forEach(slider => { slider.value = t; });
+        presetButtons.forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.preset === preset);
+        });
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+        } catch (e) { /* storage unavailable — theme still applies for the session */ }
+    }
+
+    sliders.forEach(slider => {
+        slider.addEventListener('input', () => {
+            applyTheme(parseFloat(slider.value), 'custom');
+        });
+    });
+
+    presetButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const preset = btn.dataset.preset;
+            if (preset === 'system') applyTheme(systemT(), 'system');
+            else if (preset === 'light') applyTheme(0, 'light');
+            else if (preset === 'grey') applyTheme(0.5, 'grey');
+            else if (preset === 'dark') applyTheme(1, 'dark');
+        });
+    });
+
+    // While System is the active preset, follow OS scheme changes live
+    const onSchemeChange = () => {
+        if (state.preset === 'system') applyTheme(systemT(), 'system');
+    };
+    if (typeof schemeQuery.addEventListener === 'function') {
+        schemeQuery.addEventListener('change', onSchemeChange);
+    } else if (typeof schemeQuery.addListener === 'function') {
+        schemeQuery.addListener(onSchemeChange);
+    }
+
+    // Initial paint: System resolves through the OS, everything else uses its saved t
+    if (state.preset === 'system') applyTheme(systemT(), 'system');
+    else applyTheme(state.t, state.preset);
+})();
 
 /* ============================================
    NAVBAR — Scroll effect + hamburger toggle
@@ -331,7 +449,7 @@ function renderPosters(containerId, items) {
         poster.className = 'poster';
         poster.setAttribute('role', 'button');
         poster.setAttribute('tabindex', '0');
-        poster.setAttribute('aria-label', `View details for ${item.title}`);
+        poster.setAttribute('aria-label', item.link ? `Open ${item.title} in the store` : `View details for ${item.title}`);
 
         // Background: use image if available, otherwise use gradient
         const bgStyle = item.image
@@ -347,11 +465,20 @@ function renderPosters(containerId, items) {
             </div>
         `;
 
-        poster.addEventListener('click', () => openModal(item));
+        // Items with a `link` open it in a new tab; everything else opens the modal
+        const activate = () => {
+            if (item.link) {
+                window.open(item.link, '_blank', 'noopener');
+            } else {
+                openModal(item);
+            }
+        };
+
+        poster.addEventListener('click', activate);
         poster.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
-                openModal(item);
+                activate();
             }
         });
 
@@ -498,6 +625,8 @@ document.addEventListener('DOMContentLoaded', () => {
     renderPosters('education-posters', resumeData.education);
     renderPosters('certifications-posters', resumeData.certifications);
     renderPosters('competencies-posters', resumeData.competencies);
+    renderPosters('innovation-posters', resumeData.innovation);
+    renderPosters('suite-posters', resumeData.suite);
 
     initAudio();
     initScrollReveal();
