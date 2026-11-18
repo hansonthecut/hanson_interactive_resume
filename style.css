@@ -1235,3 +1235,64 @@ main {
     text-align: center;
   }
 }
+
+/* ============================================
+   CONTACT FORM
+   ============================================ */
+.contact-form {
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.contact-form label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--hf-gray-200);
+  margin-top: var(--space-md);
+}
+
+.contact-form label:first-of-type {
+  margin-top: 0;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background-color: var(--hf-dark);
+  border: 1px solid var(--hf-border);
+  border-radius: 8px;
+  color: var(--hf-white);
+  padding: 12px 14px;
+  font: inherit;
+  font-size: var(--text-base);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid var(--hf-focus);
+  outline-offset: 1px;
+  border-color: var(--hf-gray-400);
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-submit {
+  align-self: flex-start;
+  margin-top: var(--space-md);
+}
+
+.contact-status {
+  min-height: 1.4em;
+  font-size: var(--text-sm);
+  color: var(--hf-gray-200);
+  margin: 0;
+}
+
+.contact-status.success {
+  color: var(--hf-green);
+}

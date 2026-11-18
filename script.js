@@ -635,3 +635,33 @@ document.addEventListener('DOMContentLoaded', () => {
     initAudio();
     initScrollReveal();
 });
+
+/* ====================================
+   CONTACT FORM — Formspree AJAX submit
+   ==================================== */
+(function () {
+    const form = document.getElementById('contact-form');
+    if (!form) return;
+    const status = document.getElementById('contact-status');
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        status.textContent = 'Sending\u2026';
+        status.className = 'contact-status';
+        try {
+            const res = await fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+            });
+            if (res.ok) {
+                form.reset();
+                status.textContent = 'Thanks \u2014 your message is on its way. I\u2019ll get back to you soon.';
+                status.className = 'contact-status success';
+            } else {
+                status.textContent = 'Something went wrong sending that. You can also reach me at fiifi93@gmail.com.';
+            }
+        } catch (err) {
+            status.textContent = 'Something went wrong sending that. You can also reach me at fiifi93@gmail.com.';
+        }
+    });
+})();

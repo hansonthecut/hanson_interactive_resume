@@ -190,6 +190,21 @@
                 <!-- Injected via JS -->
             </div>
         </section>
+
+        <section class="row" id="contact">
+            <h2 class="row-title">Contact</h2>
+            <form class="contact-form" id="contact-form" action="https://formspree.io/f/xljbnaar" method="POST">
+                <label for="cf-name">Name</label>
+                <input id="cf-name" type="text" name="name" autocomplete="name" required>
+                <label for="cf-email">Email</label>
+                <input id="cf-email" type="email" name="email" autocomplete="email" required>
+                <label for="cf-message">Message</label>
+                <textarea id="cf-message" name="message" rows="5" required></textarea>
+                <input type="hidden" name="_subject" value="New message from the interactive resume">
+                <button type="submit" class="btn btn-play contact-submit">Send Message</button>
+                <p class="contact-status" id="contact-status" role="status" aria-live="polite"></p>
+            </form>
+        </section>
     </main>
 
     <!-- Footer -->
