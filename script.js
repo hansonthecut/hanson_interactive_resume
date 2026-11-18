@@ -286,7 +286,8 @@ const resumeData = {
             type: "Systems Engineering",
             description: "MAG Bridge — the multi-agent orchestration system Frank designed to run his software studio. He directs; the mesh executes. A planning layer breaks product specs into phased builds, a build fleet writes and tests the code, and every phase is verified against evidence before the next begins — payments, publishing, and external sends stay behind his personal approval. Google Workspace is the shared state bus, so every agent works from one source of truth. MAG has shipped three commercial macOS applications and runs the automation behind his media business — while he works full-time at Amazon.",
             skills: ["Multi-Agent Systems", "Orchestration", "Google Workspace", "Automation", "AI Operations"],
-            match: "Flagship System"
+            match: "Flagship System",
+            image: "assets/web/dsc.jpg"
         }
     ],
     suite: [
@@ -299,6 +300,7 @@ const resumeData = {
             description: "Color grading for DaVinci Resolve: an Edit-page effect plus a standalone Edit Studio, per-camera CST presets, one-click looks.",
             skills: ["DaVinci Resolve", "Color Grading", "CST Presets"],
             match: "On Gumroad",
+            image: "assets/web/portrait-1.jpg",
             link: "https://hansonthecut.gumroad.com/"
         },
         {
@@ -310,6 +312,7 @@ const resumeData = {
             description: "Batch photo polish for event photographers: drop in a folder, get delivery-ready images.",
             skills: ["Photo Editing", "Batch Processing", "Event Photography"],
             match: "On Gumroad",
+            image: "assets/web/portraits.jpg",
             link: "https://hansonthecut.gumroad.com/"
         },
         {
@@ -321,6 +324,7 @@ const resumeData = {
             description: "Multicam sync for DaVinci Resolve: absolute-time timeline assembly across cameras, waveform-verified, nothing dropped.",
             skills: ["DaVinci Resolve", "Multicam Sync", "Waveform Analysis"],
             match: "On Gumroad",
+            image: "assets/web/lens.jpg",
             link: "https://hansonthecut.gumroad.com/"
         }
     ]
