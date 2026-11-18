@@ -283,14 +283,14 @@ const resumeData = {
    COLOR SYSTEM — Deterministic palette per card
    ============================================ */
 const cardGradients = [
-    "linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)",
-    "linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%)",
-    "linear-gradient(135deg, #1b1b2f 0%, #162447 100%)",
-    "linear-gradient(135deg, #2d132c 0%, #1a1a2e 100%)",
-    "linear-gradient(135deg, #1f4037 0%, #1a1a2e 100%)",
-    "linear-gradient(135deg, #283048 0%, #1a1a2e 100%)",
-    "linear-gradient(135deg, #3a1c71 0%, #1a1a2e 100%)",
-    "linear-gradient(135deg, #1c1c2e 0%, #0c2340 100%)",
+    "linear-gradient(135deg, #1D1D20 0%, #0E0E10 100%)",
+    "linear-gradient(135deg, #232328 0%, #131315 100%)",
+    "linear-gradient(135deg, #17171B 0%, #0A0A0B 100%)",
+    "linear-gradient(135deg, #202027 0%, #101014 100%)",
+    "linear-gradient(135deg, #1A1D23 0%, #0C0E12 100%)",
+    "linear-gradient(135deg, #25252B 0%, #151517 100%)",
+    "linear-gradient(135deg, #1E2126 0%, #0D0F13 100%)",
+    "linear-gradient(135deg, #2A2A2E 0%, #131315 100%)",
 ];
 
 /* ============================================
