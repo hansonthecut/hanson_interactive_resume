@@ -497,6 +497,7 @@ const modalOverlay = document.getElementById('modal-overlay');
 const modalClose = document.getElementById('modal-close');
 
 function openModal(item) {
+    if (window.gtag) gtag('event', 'card_open', { card_title: item.title, card_company: item.company });
     document.getElementById('modal-title').textContent = item.title;
     document.getElementById('modal-match').textContent = item.match;
     document.getElementById('modal-date').textContent = item.date;
@@ -665,3 +666,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 })();
+
+/* ====================================
+   ANALYTICS — outbound link clicks
+   ==================================== */
+document.addEventListener('click', (e) => {
+    const a = e.target.closest('a[href]');
+    if (!a || !window.gtag) return;
+    const href = a.getAttribute('href');
+    if (/^(https?:)?\/\//.test(href) && !href.includes('hansonthecut.github.io')) {
+        gtag('event', 'outbound_click', { link_url: href, link_text: (a.textContent || '').trim().slice(0, 60) });
+    } else if (href.startsWith('mailto:')) {
+        gtag('event', 'email_click', { link_url: href });
+    }
+});
