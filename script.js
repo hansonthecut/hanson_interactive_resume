@@ -300,7 +300,7 @@ const resumeData = {
             description: "Color grading for DaVinci Resolve: an Edit-page effect plus a standalone Edit Studio, per-camera CST presets, one-click looks.",
             skills: ["DaVinci Resolve", "Color Grading", "CST Presets"],
             match: "In the Store",
-            image: "assets/web/portrait-1.jpg",
+            image: "assets/suite/hansongrades-edit-studio.png",
             link: "https://store.hansonthecut.com"
         },
         {
@@ -312,7 +312,7 @@ const resumeData = {
             description: "Batch photo polish for event photographers: drop in a folder, get delivery-ready images.",
             skills: ["Photo Editing", "Batch Processing", "Event Photography"],
             match: "In the Store",
-            image: "assets/web/portraits.jpg",
+            image: "assets/suite/hansonenhancer-main.png",
             link: "https://store.hansonthecut.com"
         },
         {
@@ -324,7 +324,7 @@ const resumeData = {
             description: "Multicam sync for DaVinci Resolve: absolute-time timeline assembly across cameras, waveform-verified, nothing dropped.",
             skills: ["DaVinci Resolve", "Multicam Sync", "Waveform Analysis"],
             match: "In the Store",
-            image: "assets/web/lens.jpg",
+            image: "assets/suite/hansoffmatch-main.png",
             link: "https://store.hansonthecut.com"
         }
     ]
