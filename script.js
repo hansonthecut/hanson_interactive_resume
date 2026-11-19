@@ -299,9 +299,9 @@ const resumeData = {
             type: "Software",
             description: "Color grading for DaVinci Resolve: an Edit-page effect plus a standalone Edit Studio, per-camera CST presets, one-click looks.",
             skills: ["DaVinci Resolve", "Color Grading", "CST Presets"],
-            match: "On Gumroad",
+            match: "In the Store",
             image: "assets/web/portrait-1.jpg",
-            link: "https://hansonthecut.gumroad.com/"
+            link: "https://store.hansonthecut.com"
         },
         {
             id: "suite-enhancer",
@@ -311,9 +311,9 @@ const resumeData = {
             type: "Software",
             description: "Batch photo polish for event photographers: drop in a folder, get delivery-ready images.",
             skills: ["Photo Editing", "Batch Processing", "Event Photography"],
-            match: "On Gumroad",
+            match: "In the Store",
             image: "assets/web/portraits.jpg",
-            link: "https://hansonthecut.gumroad.com/"
+            link: "https://store.hansonthecut.com"
         },
         {
             id: "suite-match",
@@ -323,9 +323,9 @@ const resumeData = {
             type: "Software",
             description: "Multicam sync for DaVinci Resolve: absolute-time timeline assembly across cameras, waveform-verified, nothing dropped.",
             skills: ["DaVinci Resolve", "Multicam Sync", "Waveform Analysis"],
-            match: "On Gumroad",
+            match: "In the Store",
             image: "assets/web/lens.jpg",
-            link: "https://hansonthecut.gumroad.com/"
+            link: "https://store.hansonthecut.com"
         }
     ]
 };
