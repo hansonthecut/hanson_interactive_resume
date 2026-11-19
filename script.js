@@ -674,7 +674,7 @@ document.addEventListener('click', (e) => {
     const a = e.target.closest('a[href]');
     if (!a || !window.gtag) return;
     const href = a.getAttribute('href');
-    if (/^(https?:)?\/\//.test(href) && !href.includes('hansonthecut.github.io')) {
+    if (/^(https?:)?\/\//.test(href) && !href.includes('hansonthecut.github.io') && !href.includes('resume.hansonthecut.com')) {
         gtag('event', 'outbound_click', { link_url: href, link_text: (a.textContent || '').trim().slice(0, 60) });
     } else if (href.startsWith('mailto:')) {
         gtag('event', 'email_click', { link_url: href });
