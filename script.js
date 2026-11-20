@@ -209,6 +209,61 @@
     });
   }
 
+  /* ---------- Talent radar — series toggles + vertex detail card ---------- */
+  var radarPanel = document.querySelector(".ratings-panel");
+  if (radarPanel) {
+    var toggleStrengths = document.getElementById("toggle-strengths");
+    var toggleGrowth = document.getElementById("toggle-growth");
+    if (toggleStrengths) {
+      toggleStrengths.addEventListener("change", function () {
+        radarPanel.classList.toggle("hide-strengths", !toggleStrengths.checked);
+      });
+    }
+    if (toggleGrowth) {
+      toggleGrowth.addEventListener("change", function () {
+        radarPanel.classList.toggle("hide-growth", !toggleGrowth.checked);
+      });
+    }
+
+    var detail = document.getElementById("radar-detail");
+    var detailName = document.getElementById("radar-detail-name");
+    var detailScore = document.getElementById("radar-detail-score");
+    var detailSeries = document.getElementById("radar-detail-series");
+    var detailWhy = document.getElementById("radar-detail-why");
+    var detailClose = document.getElementById("radar-detail-close");
+    var vertices = radarPanel.querySelectorAll(".vertex");
+    var hoverable = window.matchMedia("(hover: hover)").matches;
+
+    function showDetail(v) {
+      if (!detail) return;
+      detailName.textContent = v.getAttribute("data-name") || "";
+      detailScore.textContent = v.getAttribute("data-score") || "";
+      detailSeries.textContent = v.getAttribute("data-series") || "";
+      detailWhy.textContent = v.getAttribute("data-why") || "";
+      detail.classList.toggle("is-growth", v.getAttribute("data-series") === "Growth Edges");
+      detail.hidden = false;
+      vertices.forEach(function (other) {
+        other.classList.toggle("active", other === v);
+      });
+    }
+    function hideDetail() {
+      if (!detail) return;
+      detail.hidden = true;
+      vertices.forEach(function (v) { v.classList.remove("active"); });
+    }
+    vertices.forEach(function (v) {
+      v.addEventListener("click", function () { showDetail(v); });
+      v.addEventListener("focus", function () { showDetail(v); });
+      if (hoverable) {
+        v.addEventListener("pointerenter", function () { showDetail(v); });
+      }
+    });
+    if (detailClose) detailClose.addEventListener("click", hideDetail);
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && detail && !detail.hidden) hideDetail();
+    });
+  }
+
   /* ---------- Analytics — outbound link clicks ---------- */
   document.addEventListener("click", function (e) {
     var a = e.target.closest("a[href]");

@@ -138,50 +138,173 @@
                                 <span class="rating-score">4/5</span>
                             </div>
                         </div>
+                        <div class="radar-controls" role="group" aria-label="Radar chart series toggles">
+                            <label class="series-toggle">
+                                <input type="checkbox" id="toggle-strengths" checked>
+                                <span class="toggle-box" aria-hidden="true"></span>
+                                <span class="toggle-swatch swatch-strengths" aria-hidden="true"></span>
+                                <span class="toggle-label">Strengths</span>
+                            </label>
+                            <label class="series-toggle">
+                                <input type="checkbox" id="toggle-growth" checked>
+                                <span class="toggle-box" aria-hidden="true"></span>
+                                <span class="toggle-swatch swatch-growth" aria-hidden="true"></span>
+                                <span class="toggle-label">Growth Edges</span>
+                            </label>
+                        </div>
+                        <p class="radar-hint">Two pentagons, one honest picture — strengths in the clear, growth edges in red. Tap or hover any point for the story behind its score.</p>
                         <figure class="radar-figure">
-                            <svg class="radar-chart" viewBox="0 0 400 290" role="img" aria-label="Power ratings radar chart, scored out of 5: Operations 5, Technology 5, Innovation 5, Media Production 5, Leadership 4.">
+                            <svg class="radar-chart" viewBox="0 0 480 340" role="img" aria-label="Power ratings radar chart, scored out of 5. Strengths: Operations 5, Technology 5, Innovation 5, Media Production 5, Leadership 4. Growth edges: Cloud Certification 2, Coding Fluency 2, Industry Tenure 2, Delegation 3, GovCon and Public Sector 2.">
                                 <g class="radar-grid">
-                                    <polygon points="200,135 219,148.8 211.8,171.2 188.2,171.2 181,148.8" />
-                                    <polygon points="200,115 238,142.6 223.5,187.4 176.5,187.4 162,142.6" />
-                                    <polygon points="200,95 257.1,136.5 235.3,203.5 164.7,203.5 142.9,136.5" />
-                                    <polygon points="200,75 276.1,130.3 247,219.7 153,219.7 123.9,130.3" />
-                                    <polygon class="radar-ring-outer" points="200,55 295.1,124.1 258.8,235.9 141.2,235.9 104.9,124.1" />
+                                    <polygon points="240,155 259,168.8 251.8,191.2 228.2,191.2 221,168.8" />
+                                    <polygon points="240,135 278,162.6 263.5,207.4 216.5,207.4 202,162.6" />
+                                    <polygon points="240,115 297.1,156.5 275.3,223.5 204.7,223.5 182.9,156.5" />
+                                    <polygon points="240,95 316.1,150.3 287,239.7 193,239.7 163.9,150.3" />
+                                    <polygon class="radar-ring-outer" points="240,75 335.1,144.1 298.8,255.9 181.2,255.9 144.9,144.1" />
                                 </g>
                                 <g class="radar-axes">
-                                    <line x1="200" y1="155" x2="200" y2="55" />
-                                    <line x1="200" y1="155" x2="295.1" y2="124.1" />
-                                    <line x1="200" y1="155" x2="258.8" y2="235.9" />
-                                    <line x1="200" y1="155" x2="141.2" y2="235.9" />
-                                    <line x1="200" y1="155" x2="104.9" y2="124.1" />
+                                    <line x1="240" y1="175" x2="240" y2="75" />
+                                    <line x1="240" y1="175" x2="335.1" y2="144.1" />
+                                    <line x1="240" y1="175" x2="298.8" y2="255.9" />
+                                    <line x1="240" y1="175" x2="181.2" y2="255.9" />
+                                    <line x1="240" y1="175" x2="144.9" y2="144.1" />
+                                </g>
+                                <g class="radar-axes-growth series series-growth">
+                                    <line x1="240" y1="175" x2="298.8" y2="94.1" />
+                                    <line x1="240" y1="175" x2="335.1" y2="205.9" />
+                                    <line x1="240" y1="175" x2="240" y2="275" />
+                                    <line x1="240" y1="175" x2="144.9" y2="205.9" />
+                                    <line x1="240" y1="175" x2="181.2" y2="94.1" />
                                 </g>
                                 <g class="radar-anim">
-                                    <polygon class="radar-poly" points="200,55 295.1,124.1 258.8,235.9 141.2,235.9 123.9,130.3" />
-                                    <g class="radar-dots">
-                                        <circle cx="200" cy="55" r="4" />
-                                        <circle cx="295.1" cy="124.1" r="4" />
-                                        <circle cx="258.8" cy="235.9" r="4" />
-                                        <circle cx="141.2" cy="235.9" r="4" />
-                                        <circle cx="123.9" cy="130.3" r="4" />
+                                    <g class="series series-growth">
+                                        <polygon class="radar-poly-growth" points="263.5,142.6 278,187.4 240,215 182.9,193.5 216.5,142.6" />
+                                    </g>
+                                    <g class="series series-strengths">
+                                        <polygon class="radar-poly" points="240,75 335.1,144.1 298.8,255.9 181.2,255.9 163.9,150.3" />
+                                    </g>
+                                    <g class="vertex series series-strengths" tabindex="0" role="button" data-name="Operations" data-score="5/5" data-series="Strengths" data-why="Sort throughput 69.23 → 78.68 TPH (#9 year-to-date), zero recordables, acting shift lead over ~40 associates." aria-label="Operations, 5 out of 5. Sort throughput 69.23 to 78.68 TPH, number 9 year-to-date, zero recordables, acting shift lead over about 40 associates.">
+                                        <circle class="vertex-hit" cx="240" cy="75" r="17" />
+                                        <circle class="vertex-dot dot-strengths" cx="240" cy="75" r="5.5" />
+                                    </g>
+                                    <g class="vertex series series-strengths" tabindex="0" role="button" data-name="Technology" data-score="5/5" data-series="Strengths" data-why="The site's AI &amp; technical SME — built SDC1's AI agent and SharePoint, plus automation that prevents 60-hour schedule breaches." aria-label="Technology, 5 out of 5. The site's AI and technical SME — built SDC1's AI agent and SharePoint, plus automation that prevents 60-hour schedule breaches.">
+                                        <circle class="vertex-hit" cx="335.1" cy="144.1" r="17" />
+                                        <circle class="vertex-dot dot-strengths" cx="335.1" cy="144.1" r="5.5" />
+                                    </g>
+                                    <g class="vertex series series-strengths" tabindex="0" role="button" data-name="Innovation" data-score="5/5" data-series="Strengths" data-why="Builds systems that didn't exist: the MAG Bridge agent mesh and the HansOn software suite, designed and shipped solo." aria-label="Innovation, 5 out of 5. Builds systems that didn't exist: the MAG Bridge agent mesh and the HansOn software suite, designed and shipped solo.">
+                                        <circle class="vertex-hit" cx="298.8" cy="255.9" r="17" />
+                                        <circle class="vertex-dot dot-strengths" cx="298.8" cy="255.9" r="5.5" />
+                                    </g>
+                                    <g class="vertex series series-strengths" tabindex="0" role="button" data-name="Media Production" data-score="5/5" data-series="Strengths" data-why="Enterprise clients including Amazon's Cloud Connect conference; Director of Media; a full production business run end-to-end." aria-label="Media Production, 5 out of 5. Enterprise clients including Amazon's Cloud Connect conference; Director of Media; a full production business run end-to-end.">
+                                        <circle class="vertex-hit" cx="181.2" cy="255.9" r="17" />
+                                        <circle class="vertex-dot dot-strengths" cx="181.2" cy="255.9" r="5.5" />
+                                    </g>
+                                    <g class="vertex series series-strengths" tabindex="0" role="button" data-name="Leadership" data-score="4/5" data-series="Strengths" data-why="Leads AI training for L4–L8 leaders (600+ trained) — and Amazon's own review scores Potential at 4. The notch is the climb." aria-label="Leadership, 4 out of 5. Leads AI training for L4 to L8 leaders, 600 plus trained — and Amazon's own review scores Potential at 4. The notch is the climb.">
+                                        <circle class="vertex-hit" cx="163.9" cy="150.3" r="17" />
+                                        <circle class="vertex-dot dot-strengths" cx="163.9" cy="150.3" r="5.5" />
+                                    </g>
+                                    <g class="vertex series series-growth" tabindex="0" role="button" data-name="Cloud Certification" data-score="2/5" data-series="Growth Edges" data-why="AWS Solutions Architect (SAA-C03) in preparation now — hands-on first, credential catching up." aria-label="Cloud Certification, 2 out of 5. AWS Solutions Architect, SAA-C03, in preparation now — hands-on first, credential catching up.">
+                                        <circle class="vertex-hit" cx="263.5" cy="142.6" r="17" />
+                                        <circle class="vertex-dot dot-growth" cx="263.5" cy="142.6" r="5" />
+                                    </g>
+                                    <g class="vertex series series-growth" tabindex="0" role="button" data-name="Coding Fluency" data-score="2/5" data-series="Growth Edges" data-why="In a deliberate Python fluency sprint — building with AI daily, training to solve unaided to interview standard." aria-label="Coding Fluency, 2 out of 5. In a deliberate Python fluency sprint — building with AI daily, training to solve unaided to interview standard.">
+                                        <circle class="vertex-hit" cx="278" cy="187.4" r="17" />
+                                        <circle class="vertex-dot dot-growth" cx="278" cy="187.4" r="5" />
+                                    </g>
+                                    <g class="vertex series series-growth" tabindex="0" role="button" data-name="Industry Tenure" data-score="2/5" data-series="Growth Edges" data-why="Amazon since July 2024. Short tenure, dense results — the record above is two years deep, not ten." aria-label="Industry Tenure, 2 out of 5. Amazon since July 2024. Short tenure, dense results — the record above is two years deep, not ten.">
+                                        <circle class="vertex-hit" cx="240" cy="215" r="17" />
+                                        <circle class="vertex-dot dot-growth" cx="240" cy="215" r="5" />
+                                    </g>
+                                    <g class="vertex series series-growth" tabindex="0" role="button" data-name="Delegation" data-score="3/5" data-series="Growth Edges" data-why="Historically did everything himself — so he built the MAG Bridge to run the business without him. The weakness, engineered into a system." aria-label="Delegation, 3 out of 5. Historically did everything himself — so he built the MAG Bridge to run the business without him. The weakness, engineered into a system.">
+                                        <circle class="vertex-hit" cx="182.9" cy="193.5" r="17" />
+                                        <circle class="vertex-dot dot-growth" cx="182.9" cy="193.5" r="5" />
+                                    </g>
+                                    <g class="vertex series series-growth" tabindex="0" role="button" data-name="GovCon / Public Sector" data-score="2/5" data-series="Growth Edges" data-why="New territory, entered deliberately: SWaM certification in filing and the first enterprise engagements underway." aria-label="GovCon and Public Sector, 2 out of 5. New territory, entered deliberately: SWaM certification in filing and the first enterprise engagements underway.">
+                                        <circle class="vertex-hit" cx="216.5" cy="142.6" r="17" />
+                                        <circle class="vertex-dot dot-growth" cx="216.5" cy="142.6" r="5" />
                                     </g>
                                 </g>
-                                <g class="radar-labels">
-                                    <text x="200" y="36" text-anchor="middle">Operations</text>
-                                    <text x="308" y="121">Technology</text>
-                                    <text x="267" y="260" text-anchor="middle">Innovation</text>
-                                    <text x="133" y="260" text-anchor="middle">Media Production</text>
-                                    <text x="92" y="121" text-anchor="end">Leadership</text>
+                                <g class="radar-labels series series-strengths">
+                                    <text x="240" y="48" text-anchor="middle">Operations · 5/5</text>
+                                    <text x="348" y="140">Technology · 5/5</text>
+                                    <text x="314" y="286" text-anchor="middle">Innovation · 5/5</text>
+                                    <text x="162" y="286" text-anchor="middle">Media Production · 5/5</text>
+                                    <text x="132" y="140" text-anchor="end">Leadership · 4/5</text>
                                 </g>
-                                <text class="radar-scale" x="209" y="60">5</text>
-                                <text class="radar-scale" x="207" y="152">0</text>
+                                <g class="radar-labels-growth series series-growth">
+                                    <text x="304" y="82">Cloud Certification · 2/5</text>
+                                    <text x="348" y="220">Coding Fluency · 2/5</text>
+                                    <text x="240" y="324" text-anchor="middle">Industry Tenure · 2/5</text>
+                                    <text x="128" y="220" text-anchor="end">Delegation · 3/5</text>
+                                    <text x="176" y="82" text-anchor="end">GovCon · 2/5</text>
+                                </g>
+                                <text class="radar-scale" x="250" y="82">5</text>
+                                <text class="radar-scale" x="248" y="172">0</text>
                             </svg>
                         </figure>
-                        <ul class="radar-values">
-                            <li>Operations <strong>5/5</strong></li>
-                            <li>Technology <strong>5/5</strong></li>
-                            <li>Innovation <strong>5/5</strong></li>
-                            <li>Media Production <strong>5/5</strong></li>
-                            <li>Leadership <strong>4/5</strong></li>
-                        </ul>
+                        <div class="radar-detail" id="radar-detail" hidden>
+                            <div class="radar-detail-main">
+                                <p class="radar-detail-head">
+                                    <span class="radar-detail-name" id="radar-detail-name"></span>
+                                    <span class="radar-detail-score" id="radar-detail-score"></span>
+                                    <span class="radar-detail-series" id="radar-detail-series"></span>
+                                </p>
+                                <p class="radar-detail-why" id="radar-detail-why"></p>
+                            </div>
+                            <button class="radar-detail-close" id="radar-detail-close" type="button" aria-label="Dismiss score detail">&times;</button>
+                        </div>
+                        <div class="radar-values-groups">
+                            <div class="radar-values-group">
+                                <p class="radar-values-title"><span class="toggle-swatch swatch-strengths" aria-hidden="true"></span>Strengths</p>
+                                <ul class="radar-values">
+                                    <li>
+                                        <span class="rv-head">Operations <strong>5/5</strong></span>
+                                        <span class="rv-why">Sort throughput 69.23 → 78.68 TPH (#9 year-to-date), zero recordables, acting shift lead over ~40 associates.</span>
+                                    </li>
+                                    <li>
+                                        <span class="rv-head">Technology <strong>5/5</strong></span>
+                                        <span class="rv-why">The site's AI &amp; technical SME — built SDC1's AI agent and SharePoint, plus automation that prevents 60-hour schedule breaches.</span>
+                                    </li>
+                                    <li>
+                                        <span class="rv-head">Innovation <strong>5/5</strong></span>
+                                        <span class="rv-why">Builds systems that didn't exist: the MAG Bridge agent mesh and the HansOn software suite, designed and shipped solo.</span>
+                                    </li>
+                                    <li>
+                                        <span class="rv-head">Media Production <strong>5/5</strong></span>
+                                        <span class="rv-why">Enterprise clients including Amazon's Cloud Connect conference; Director of Media; a full production business run end-to-end.</span>
+                                    </li>
+                                    <li>
+                                        <span class="rv-head">Leadership <strong>4/5</strong></span>
+                                        <span class="rv-why">Leads AI training for L4–L8 leaders (600+ trained) — and Amazon's own review scores Potential at 4. The notch is the climb.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="radar-values-group is-growth">
+                                <p class="radar-values-title"><span class="toggle-swatch swatch-growth" aria-hidden="true"></span>Growth Edges</p>
+                                <ul class="radar-values">
+                                    <li>
+                                        <span class="rv-head">Cloud Certification <strong>2/5</strong></span>
+                                        <span class="rv-why">AWS Solutions Architect (SAA-C03) in preparation now — hands-on first, credential catching up.</span>
+                                    </li>
+                                    <li>
+                                        <span class="rv-head">Coding Fluency <strong>2/5</strong></span>
+                                        <span class="rv-why">In a deliberate Python fluency sprint — building with AI daily, training to solve unaided to interview standard.</span>
+                                    </li>
+                                    <li>
+                                        <span class="rv-head">Industry Tenure <strong>2/5</strong></span>
+                                        <span class="rv-why">Amazon since July 2024. Short tenure, dense results — the record above is two years deep, not ten.</span>
+                                    </li>
+                                    <li>
+                                        <span class="rv-head">Delegation <strong>3/5</strong></span>
+                                        <span class="rv-why">Historically did everything himself — so he built the MAG Bridge to run the business without him. The weakness, engineered into a system.</span>
+                                    </li>
+                                    <li>
+                                        <span class="rv-head">GovCon / Public Sector <strong>2/5</strong></span>
+                                        <span class="rv-why">New territory, entered deliberately: SWaM certification in filing and the first enterprise engagements underway.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
