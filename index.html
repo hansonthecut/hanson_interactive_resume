@@ -5,21 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Frank Hanson — Amazon Area Manager & AI Subject Matter Expert, founder of Hansonthecut LLC. Interactive resume: operations leadership, AI enablement, and corporate media production.">
-    <title>Frank Hanson — Interactive Resume</title>
-    <link rel="icon" type="image/png" href="assets/Opengraph and favicon/favicon_optimized.png">
-    
+        content="Frank Hanson — Amazon L4 Area Manager & AI Subject Matter Expert (SDC1, Springfield VA), founder of Hansonthecut LLC. Operations leadership, applied AI, and corporate media production.">
+    <title>Frank Hanson — Operations Leader & AI SME</title>
+    <link rel="icon" type="image/png" href="assets/Opengraph%20and%20favicon/favicon_optimized.png">
+
     <!-- OpenGraph Tags -->
-    <meta property="og:title" content="Frank Hanson — Interactive Resume">
+    <meta property="og:title" content="Frank Hanson — Operations Leader & AI SME">
     <meta property="og:description" content="Amazon Area Manager & AI Subject Matter Expert; founder of Hansonthecut LLC. Operations leadership, AI enablement, and corporate media production.">
     <meta property="og:image" content="https://resume.hansonthecut.com/assets/Opengraph%20and%20favicon/opengraph.PNG">
     <meta property="og:type" content="website">
 
+    <!-- Theme engine (HansOn master spectrum) — applies the saved theme before first paint -->
+    <script src="theme.js"></script>
+
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-M03RNEQ4RK"></script>
@@ -32,271 +31,439 @@
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav class="navbar" id="navbar">
-        <a href="#" class="navbar-brand" id="navbar-brand">FRANK HANSON</a>
-
-        <!-- Hamburger Button (mobile only) -->
-        <div class="nav-controls">
-            <button id="sound-toggle" class="nav-icon-btn" aria-label="Toggle Sound">
-                <svg id="sound-on-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
-                <svg id="sound-off-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
-            </button>
-            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-            </button>
-        </div>
-
-        <div class="navbar-nav" id="navbar-nav">
-            <a href="#" class="nav-link">Home</a>
-            <a href="#about" class="nav-link">About</a>
-            <a href="#experience" class="nav-link">Experience</a>
-            <a href="#education" class="nav-link">Education</a>
-            <a href="#certifications" class="nav-link">Skills</a>
-            <a href="#competencies" class="nav-link">Strengths</a>
-            <a href="https://store.hansonthecut.com" class="nav-link" target="_blank" rel="noopener noreferrer">Store</a>
-            <div class="theme-control theme-control--nav" role="group" aria-label="Theme spectrum">
-                <input type="range" class="theme-slider" min="0" max="1" step="0.01" value="1" aria-label="Theme spectrum — light to dark">
-                <div class="theme-presets">
-                    <button type="button" class="theme-preset" data-preset="system">System</button>
-                    <button type="button" class="theme-preset" data-preset="light">Light</button>
-                    <button type="button" class="theme-preset" data-preset="grey">Grey</button>
-                    <button type="button" class="theme-preset" data-preset="dark">Dark</button>
-                </div>
-            </div>
-            <div class="nav-contact-container">
-                <a href="mailto:fiifi93@gmail.com" class="nav-link nav-link-cta" id="contact-link">Contact</a>
-                <div class="contact-dropdown" id="contact-dropdown">
-                    <p><strong>Email:</strong> fiifi93@gmail.com</p>
-                    <p><strong>Phone:</strong> <a href="tel:7196635020" class="contact-link">719-663-5020</a></p>
-                    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/frankhanson4614" target="_blank" rel="noopener noreferrer">View Profile</a></p>
-                </div>
-            </div>
-            <div class="theme-control theme-control--mobile" role="group" aria-label="Theme spectrum">
-                <input type="range" class="theme-slider" min="0" max="1" step="0.01" value="1" aria-label="Theme spectrum — light to dark">
-                <div class="theme-presets">
-                    <button type="button" class="theme-preset" data-preset="system">System</button>
-                    <button type="button" class="theme-preset" data-preset="light">Light</button>
-                    <button type="button" class="theme-preset" data-preset="grey">Grey</button>
-                    <button type="button" class="theme-preset" data-preset="dark">Dark</button>
-                </div>
-            </div>
-        </div>
-    </nav>
-    <div class="spectrum-bar" aria-hidden="true"></div>
-
-    <!-- Audio Elements -->
-<audio id="intro-audio">
-    <source src="assets/sounds/intro.mp3" type="audio/mpeg">
-</audio>
-<audio id="cinematic-audio">
-    <source src="assets/sounds/cinematic_intro.mp3" type="audio/mpeg">
-</audio>
-
-    <!-- Hero Section -->
-    <header class="hero" id="hero">
-        <video class="hero-bg-video" autoplay muted loop playsinline poster="assets/web/aerial.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
-    <source src="assets/drone-hero.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <div class="hero-profile">
-                <div class="hero-profile-text">
-                    <h1 class="hero-title">Frank Hanson</h1>
-                    <h2 class="hero-subtitle">Operations Leader · AI Subject Matter Expert · Founder</h2>
-                </div>
-            </div>
-            <p class="hero-description">Amazon Area Manager and site AI subject matter expert who builds the tools his teams run on — and founder of Hansonthecut LLC, a corporate media company trusted with conference films, executive headshots, and documentaries. Operations leadership, applied AI, and production craft in one profile.</p>
-            <div class="hero-buttons">
-                <a href="https://www.linkedin.com/in/frankhanson4614" target="_blank" rel="noopener noreferrer"
-                    class="btn btn-play" id="btn-connect">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M8 5v14l11-7z" />
-                    </svg>
-                    <span>Connect</span>
-                </a>
-                <button class="btn btn-info" id="btn-more-info">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="10" />
-                        <line x1="12" y1="16" x2="12" y2="12" />
-                        <line x1="12" y1="8" x2="12.01" y2="8" />
-                    </svg>
-                    <span>More Info</span>
+    <!-- Header -->
+    <header class="site-header" id="site-header">
+        <a href="#top" class="brand" aria-label="Frank Hanson — home">FRANK&nbsp;HANSON</a>
+        <nav class="site-nav" id="site-nav" aria-label="Primary">
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#ai">AI &amp; Systems</a>
+            <a href="#ventures">Ventures</a>
+            <a href="#skills">Skills</a>
+            <a href="#education">Education</a>
+        </nav>
+        <div class="header-actions">
+            <div class="theme-control" id="theme-control">
+                <button type="button" class="theme-toggle" id="theme-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Theme">
+                    <svg class="icon-sun" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+                    <svg class="icon-moon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
                 </button>
+                <div class="theme-panel" id="theme-panel" role="group" aria-label="Theme spectrum" hidden>
+                    <div class="theme-panel-scale" aria-hidden="true">
+                        <span>Light</span><span>Grey</span><span>Dark</span>
+                    </div>
+                    <input type="range" class="theme-slider" id="theme-slider" min="0" max="1000" step="1" value="1000" aria-label="Theme spectrum, light to dark">
+                    <div class="theme-presets">
+                        <button type="button" data-preset="system">System</button>
+                        <button type="button" data-preset="light">Light</button>
+                        <button type="button" data-preset="grey">Grey</button>
+                        <button type="button" data-preset="dark">Dark</button>
+                    </div>
+                </div>
             </div>
+            <a href="#contact" class="btn btn-accent header-cta">Contact</a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </header>
+    <div class="spectrum-bar" aria-hidden="true"></div>
 
-    <!-- Main Content Sliders -->
+    <!-- Audio (opt-in only — starts when the visitor turns sound on) -->
+    <audio id="intro-audio" preload="none">
+        <source src="assets/sounds/intro.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="cinematic-audio" preload="none">
+        <source src="assets/sounds/cinematic_intro.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Hero -->
+    <section class="hero" id="top" data-fx="leave">
+        <video class="hero-video" autoplay muted loop playsinline poster="assets/web/aerial.jpg" aria-hidden="true">
+            <source src="assets/drone-hero.mp4" type="video/mp4">
+        </video>
+        <div class="hero-shade" aria-hidden="true"></div>
+        <div class="hero-inner">
+            <p class="eyebrow">Amazon SDC1 · Springfield, VA</p>
+            <h1 class="hero-title">Frank Hanson</h1>
+            <p class="hero-subtitle">Operations Leader · AI Subject Matter Expert · Founder</p>
+            <p class="hero-lede">Amazon Area Manager and site AI subject matter expert who builds the tools his teams run on — and founder of Hansonthecut LLC, a corporate media company trusted with conference films, executive headshots, and documentaries. Operations leadership, applied AI, and production craft in one profile.</p>
+            <div class="hero-ctas">
+                <a href="#experience" class="btn btn-accent btn-lg">View Experience</a>
+                <a href="#contact" class="btn btn-ghost btn-lg">Contact</a>
+            </div>
+        </div>
+        <button id="sound-toggle" class="sound-toggle" aria-label="Turn sound on" aria-pressed="false">
+            <svg class="sound-off-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+            <svg class="sound-on-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;" aria-hidden="true"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+            <span>Sound</span>
+        </button>
+        <div class="hero-scroll" aria-hidden="true"><span></span></div>
+    </section>
+
     <main>
-        <!-- About Section -->
-        <section class="row about-row" id="about">
-            <div class="about-container">
-                <div class="about-image">
-                    <img src="assets/portraits_of_me/headshot_final.png" alt="Frank Hanson">
-                </div>
-                <div class="about-content-text">
-                    <h3 class="about-subtitle">Executive Summary</h3>
-                    <ul class="about-list">
-                        <li>Amazon L4 Area Manager (SDC1, Springfield VA) since July 2024 and the site's AI & Technology SME — rated Performance 5 / Potential 4 and recommended for promotion to L5, with zero recordable injuries and 100% associate engagement.</li>
+        <!-- About / Executive Summary -->
+        <section class="section" id="about">
+            <div class="section-head" data-reveal>
+                <p class="eyebrow">Profile</p>
+                <h2 class="display-h">Executive Summary</h2>
+            </div>
+            <div class="about-grid">
+                <figure class="about-portrait" data-reveal>
+                    <img src="assets/portraits_of_me/headshot_final.png" alt="Frank Hanson" loading="lazy">
+                </figure>
+                <div class="about-body" data-reveal>
+                    <ul class="summary-list">
+                        <li>Amazon L4 Area Manager (SDC1, Springfield VA) since July 2024 and the site's AI &amp; Technology SME — rated Performance 5 / Potential 4 and recommended for promotion to L5, with zero recordable injuries and 100% associate engagement.</li>
                         <li>Built SDC1's SharePoint from scratch and created an AI agent for real-time operational support; engineered automation that prevents 60-hour policy breaches and optimizes headcount. Led the BEN SPS AI workshop, training 600+ leaders from L4 to L8, and serve on the BEN DMV committee and as a Lead Tech SME for BEN Tech.</li>
                         <li>Founder, owner, and Director of Photography of Hansonthecut LLC — corporate event media, executive headshots, and documentary production, including Amazon's Cloud Connect conference — and Director of Media leading a church's new-facility studio rollout and live broadcasts.</li>
-                        <li>Dual BA from the University of Richmond (Global Studies in Development & Change; Leadership), with earlier work in energy policy at Ghana's Ministry of Energy, community infrastructure at the Richmond BridgePark Foundation, and geospatial analysis as a satellite imaging project lead.</li>
+                        <li>Dual BA from the University of Richmond (Global Studies in Development &amp; Change; Leadership), with earlier work in energy policy at Ghana's Ministry of Energy, community infrastructure at the Richmond BridgePark Foundation, and geospatial analysis as a satellite imaging project lead.</li>
                     </ul>
+                    <div class="stat-row">
+                        <div class="stat"><strong>5 / 4</strong><span>Performance / Potential rating</span></div>
+                        <div class="stat"><strong>600+</strong><span>Leaders trained on AI (L4–L8)</span></div>
+                        <div class="stat"><strong>0</strong><span>Recordable injuries</span></div>
+                        <div class="stat"><strong>78.68</strong><span>Sort TPH YTD — from 69.23</span></div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Portfolio Showcase -->
-        <section class="row" id="portfolio">
-            <h2 class="row-title">Portfolio Showcase</h2>
-            <div class="row-posters row-posters-lg" id="portfolio-posters">
-                <!-- Injected via JS -->
+        <!-- Experience -->
+        <section class="section" id="experience">
+            <span class="mega-word" data-drift="-0.06" aria-hidden="true">OPERATIONS</span>
+            <div class="section-head" data-reveal>
+                <p class="eyebrow">Career</p>
+                <h2 class="display-h">Experience</h2>
+            </div>
+            <div class="timeline">
+                <article class="tl-item" data-reveal>
+                    <div class="tl-meta">
+                        <span class="tl-date">Jul 2024 — Present</span>
+                        <span class="tl-place">Springfield, VA</span>
+                    </div>
+                    <div class="tl-body">
+                        <h3>Area Manager &amp; AI Subject Matter Expert</h3>
+                        <p class="tl-org">Amazon — SDC1</p>
+                        <ul>
+                            <li>L4 Area Manager cross-trained across Outbound, Inbound, and Sort; currently leads Sort on Back Half Days (1 PA, ~40 associates) across 9 CPT windows, and has run the shift as acting shift lead.</li>
+                            <li>Sole AI &amp; Technology SME for SDC1: built the site's SharePoint from scratch — porting all QUIPs ahead of Amazon's network deadlines — and created the SDC1 AI agent (Slack/Firefox integration) for real-time operational answers.</li>
+                            <li>Engineered automation that prevents 60-hour policy breaches, optimizes headcount allocation, and flags problem routes before they disrupt Sort; owns headcount decisions typically held at L5.</li>
+                            <li>Led the BEN SPS AI workshop (February 2026), training 600+ leaders (L4–L8) live and virtually; BENTECH Lead Tech SME and BENDMV committee member.</li>
+                            <li>Took over Sort at 69.23 TPH and drove it to 78.68 TPH year-to-date (top 10), with the team ranked #2 in the network for Building TPH (71.65).</li>
+                            <li>Immaculate safety and people record: 0 recordable injuries, Leadership Safety Score 83.6% (+10.8% MoM), 100% associate engagement, and site-leading onboarding — 90.0% Onboarding Week Health with 100% Week 1 curriculum completion.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="tl-item" data-reveal>
+                    <div class="tl-meta">
+                        <span class="tl-date">May 2022 — May 2023</span>
+                        <span class="tl-place">Richmond, VA</span>
+                    </div>
+                    <div class="tl-body">
+                        <h3>Performance Consultant &amp; Project Manager</h3>
+                        <p class="tl-org">Richmond BridgePark Foundation</p>
+                        <ul>
+                            <li>Led a cross-functional team of 10 members delivering a high-profile community infrastructure project.</li>
+                            <li>Held full accountability for project delivery within strict budgetary constraints, including resource allocation and risk mitigation.</li>
+                            <li>Architected and implemented a project management framework based on Agile principles, resulting in a 20% reduction in project delivery time.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="tl-item" data-reveal>
+                    <div class="tl-meta">
+                        <span class="tl-date">Jan 2021 — Aug 2021</span>
+                        <span class="tl-place">Ghana</span>
+                    </div>
+                    <div class="tl-body">
+                        <h3>Energy Transition Analyst</h3>
+                        <p class="tl-org">Ghana Ministry of Energy</p>
+                        <ul>
+                            <li>Researched and analyzed regional energy policies, economic trends, and environmental factors to evaluate the feasibility and impact of transitioning to renewable energy sources.</li>
+                            <li>Developed strategic recommendations and policy frameworks to support adoption of renewable energy technologies in the West African context.</li>
+                            <li>Engaged in advocacy and stakeholder outreach to build support for sustainable energy initiatives.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="tl-item" data-reveal>
+                    <div class="tl-meta">
+                        <span class="tl-date">May 2020 — Aug 2020</span>
+                        <span class="tl-place">Richmond, VA</span>
+                    </div>
+                    <div class="tl-body">
+                        <h3>Policy Analyst</h3>
+                        <p class="tl-org">Freelance</p>
+                        <ul>
+                            <li>Conducted in-depth policy analysis of the socio-economic implications of Chinese investments and partnerships across Africa — trade agreements, infrastructure projects, and technology transfers.</li>
+                            <li>Formulated evidence-based recommendations with interdisciplinary teams on maximizing the benefits of Chinese engagement while addressing its risks.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="tl-item" data-reveal>
+                    <div class="tl-meta">
+                        <span class="tl-date">Sep 2019 — May 2023</span>
+                        <span class="tl-place">Richmond, VA</span>
+                    </div>
+                    <div class="tl-body">
+                        <h3>Satellite Imaging Project Lead</h3>
+                        <p class="tl-org">University of Richmond — Satellite Imaging Lab</p>
+                        <ul>
+                            <li>Provided expert consultation and strategic recommendations on the application of satellite imaging technology to project objectives.</li>
+                            <li>Led project planning and execution for analytical assignments, ensuring optimal resource deployment and punctual delivery of reports and data visualizations.</li>
+                            <li>Tools: ArcGIS suite, QGIS, Tableau, Stata, Excel.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="tl-item" data-reveal>
+                    <div class="tl-meta">
+                        <span class="tl-date">May 2016 — May 2019</span>
+                        <span class="tl-place">Colorado Springs, CO</span>
+                    </div>
+                    <div class="tl-body">
+                        <h3>Member, Board of Advisors</h3>
+                        <p class="tl-org">The Giddings Foundation</p>
+                        <ul>
+                            <li>Provided high-level strategic guidance and executive oversight for community development, education, and social impact initiatives.</li>
+                            <li>Participated in quarterly board meetings and decision-making on transparency and financial accountability; engaged in fundraising strategy, donor cultivation, and partnership development.</li>
+                        </ul>
+                    </div>
+                </article>
             </div>
         </section>
 
-        <section class="row" id="experience">
-            <h2 class="row-title">Experience</h2>
-            <div class="row-posters" id="experience-posters">
-                <!-- Injected via JS -->
+        <!-- AI & Technical Leadership -->
+        <section class="section" id="ai">
+            <span class="mega-word" data-drift="0.05" aria-hidden="true">APPLIED&nbsp;AI</span>
+            <div class="section-head" data-reveal>
+                <p class="eyebrow">AI &amp; Technical Leadership</p>
+                <h2 class="display-h">Builds the tools his teams run on</h2>
+                <p class="lede">The through-line of Frank's work: identify the manual, fragile process — then build the system that replaces it, and teach everyone else to use it.</p>
+            </div>
+            <div class="card-grid">
+                <article class="card" data-reveal>
+                    <p class="card-tag">Amazon · SDC1</p>
+                    <h3>The SDC1 AI Agent</h3>
+                    <p>Designed and built an AI agent integrated with Slack and Firefox that gives site leaders real-time operational answers — knowledge that used to require hunting through documents, delivered in the flow of the shift.</p>
+                </article>
+                <article class="card" data-reveal>
+                    <p class="card-tag">Amazon · SDC1</p>
+                    <h3>SharePoint &amp; Automation</h3>
+                    <p>Constructed the site's SharePoint from scratch and engineered automation that tracks worked hours to prevent 60-hour policy breaches, powers a dynamic headcount planner scaled across both shifts, and flags problem routes before they disrupt Sort.</p>
+                </article>
+                <article class="card" data-reveal>
+                    <p class="card-tag">Amazon · BEN SPS</p>
+                    <h3>AI Workshop — 600+ Leaders</h3>
+                    <p>Led the BEN SPS AI workshop in February 2026, training more than 600 leaders (L4–L8) live and virtually on putting AI to work in operations — the site's AI practice, scaled to the network.</p>
+                </article>
+                <article class="card" data-reveal>
+                    <p class="card-tag">Systems · Personal R&amp;D</p>
+                    <h3>MAG Bridge</h3>
+                    <p>A multi-agent orchestration system Frank designed to run his software studio: a planning layer breaks product specs into phased builds, a build fleet writes and tests the code, and every phase is verified against evidence before the next begins — with payments, publishing, and external sends kept behind his personal approval. It has shipped three commercial macOS applications and runs the automation behind his media business — while he works full-time at Amazon.</p>
+                </article>
             </div>
         </section>
 
-        <section class="row" id="innovation">
-            <h2 class="row-title">Innovation</h2>
-            <div class="row-posters" id="innovation-posters">
-                <!-- Injected via JS -->
+        <!-- Ventures -->
+        <section class="section" id="ventures">
+            <span class="mega-word" data-drift="-0.05" aria-hidden="true">VENTURES</span>
+            <div class="section-head" data-reveal>
+                <p class="eyebrow">Founder Work</p>
+                <h2 class="display-h">Hansonthecut LLC</h2>
+                <p class="lede">A commercial media production company in Centreville, VA — run with the same operational precision: dual-slot redundant capture on every shoot, cinema finishing in DaVinci Resolve, and delivery clients can plan around. Fully insured ($1M/$2M general liability).</p>
+            </div>
+            <article class="feature" data-reveal>
+                <div class="feature-media">
+                    <img src="assets/web/event.jpg" alt="Amazon Cloud Connect conference coverage" loading="lazy">
+                </div>
+                <div class="feature-body">
+                    <p class="card-tag">Flagship Engagement · November 2026</p>
+                    <h3>Amazon Cloud Connect — Enterprise Media Suite</h3>
+                    <p>A turnkey media package produced end-to-end for Amazon's Cloud Connect conference: a pre-event Kickoff Anthem Film, mobile cinema-studio interviews in 4K with 32-bit float audio, a pop-up executive headshot studio, full-day live event coverage, and a Master Impact &amp; Sponsorship Film with vertical social cutdowns and a curated gallery of 150+ images.</p>
+                    <a class="text-link" href="https://hansonthecut.com" target="_blank" rel="noopener noreferrer">Visit hansonthecut.com →</a>
+                </div>
+            </article>
+            <div class="card-grid card-grid-2">
+                <article class="card" data-reveal>
+                    <p class="card-tag">Media Leadership</p>
+                    <h3>Director of Media</h3>
+                    <p>Directs the media operation of a growing church through its new-facility studio rollout — camera, lighting, and audio buildout, a designed live-broadcast workflow, and a trained volunteer team running it every week.</p>
+                </article>
+                <article class="card" data-reveal>
+                    <p class="card-tag">Software · HansOn Suite</p>
+                    <h3>Tools other creators buy</h3>
+                    <p>The post-production software Frank built for his own pipeline became a product line — three macOS applications for color grading, photo finishing, and multicam sync, sold through the HansOn store.</p>
+                </article>
+            </div>
+            <div class="suite-grid">
+                <a class="suite-card" href="https://store.hansonthecut.com" target="_blank" rel="noopener noreferrer" data-reveal>
+                    <img src="assets/suite/hansongrades-edit-studio.png" alt="HansOnGrades Edit Studio" loading="lazy">
+                    <div class="suite-card-body"><h3>HansOnGrades</h3><p>Color grading for DaVinci Resolve — an Edit-page effect plus a standalone Edit Studio, per-camera CST presets, one-click looks.</p><span class="text-link">In the Store →</span></div>
+                </a>
+                <a class="suite-card" href="https://store.hansonthecut.com" target="_blank" rel="noopener noreferrer" data-reveal>
+                    <img src="assets/suite/hansonenhancer-main.png" alt="HansOnEnhancer" loading="lazy">
+                    <div class="suite-card-body"><h3>HansOnEnhancer</h3><p>Batch photo polish for event photographers: drop in a folder, get delivery-ready images.</p><span class="text-link">In the Store →</span></div>
+                </a>
+                <a class="suite-card" href="https://store.hansonthecut.com" target="_blank" rel="noopener noreferrer" data-reveal>
+                    <img src="assets/suite/hansoffmatch-main.png" alt="HansOffMatch" loading="lazy">
+                    <div class="suite-card-body"><h3>HansOffMatch</h3><p>Multicam sync for DaVinci Resolve: absolute-time timeline assembly across cameras, waveform-verified, nothing dropped.</p><span class="text-link">In the Store →</span></div>
+                </a>
+            </div>
+            <div class="work-strip" data-reveal>
+                <figure><img src="assets/web/concert.jpg" alt="Live concert coverage" loading="lazy"><figcaption>Live Concert Coverage</figcaption></figure>
+                <figure><img src="assets/web/aerial.jpg" alt="Colorado mountain aerials" loading="lazy"><figcaption>Colorado Mountain Aerials</figcaption></figure>
+                <figure><img src="assets/web/wildlife.jpg" alt="Guatemala documentary" loading="lazy"><figcaption>Guatemala Documentary</figcaption></figure>
             </div>
         </section>
 
-        <section class="row" id="suite">
-            <h2 class="row-title">HansOn Suite</h2>
-            <div class="row-posters" id="suite-posters">
-                <!-- Injected via JS -->
+        <!-- Skills -->
+        <section class="section" id="skills">
+            <div class="section-head" data-reveal>
+                <p class="eyebrow">Capabilities</p>
+                <h2 class="display-h">Skills &amp; Tools</h2>
             </div>
+            <div class="skills-grid">
+                <div class="skill-group" data-reveal>
+                    <h3>AI &amp; Automation</h3>
+                    <ul class="chips"><li>Custom AI Agents</li><li>Multi-Agent Orchestration</li><li>Workflow Automation</li><li>LLM Training &amp; Enablement</li><li>Python</li></ul>
+                </div>
+                <div class="skill-group" data-reveal>
+                    <h3>Data &amp; BI</h3>
+                    <ul class="chips"><li>SQL</li><li>Power BI (DAX, Power Query)</li><li>Tableau</li><li>Excel</li><li>Google Sheets</li><li>Stata</li></ul>
+                </div>
+                <div class="skill-group" data-reveal>
+                    <h3>Program &amp; Project Management</h3>
+                    <ul class="chips"><li>Agile</li><li>Scrum</li><li>JIRA</li><li>Salesforce</li><li>MS Project</li><li>Labor &amp; Headcount Planning</li></ul>
+                </div>
+                <div class="skill-group" data-reveal>
+                    <h3>Operations Leadership</h3>
+                    <ul class="chips"><li>Sort / Inbound / Outbound</li><li>Onboarding Mechanisms</li><li>Safety Mechanisms</li><li>Team Leadership</li><li>Shift Leadership</li></ul>
+                </div>
+                <div class="skill-group" data-reveal>
+                    <h3>Geospatial</h3>
+                    <ul class="chips"><li>ArcGIS Pro</li><li>ESRI Suite</li><li>QGIS</li><li>Satellite Imagery Processing</li></ul>
+                </div>
+                <div class="skill-group" data-reveal>
+                    <h3>Media Production</h3>
+                    <ul class="chips"><li>Cinematography</li><li>DaVinci Resolve</li><li>Executive Headshots</li><li>Live Broadcast</li><li>Color Grading</li></ul>
+                </div>
+            </div>
+            <p class="in-progress" data-reveal><strong>In progress:</strong> AWS Solutions Architect — Associate (SAA-C03), in preparation.</p>
         </section>
 
-        <section class="row" id="education">
-            <h2 class="row-title">Education</h2>
-            <div class="row-posters" id="education-posters">
-                <!-- Injected via JS -->
+        <!-- Education -->
+        <section class="section" id="education">
+            <span class="mega-word" data-drift="0.04" aria-hidden="true">RICHMOND</span>
+            <div class="section-head" data-reveal>
+                <p class="eyebrow">Education</p>
+                <h2 class="display-h">University of Richmond</h2>
             </div>
+            <div class="card-grid card-grid-2">
+                <article class="card" data-reveal>
+                    <p class="card-tag">Bachelor of Arts</p>
+                    <h3>Global Studies in Development &amp; Change</h3>
+                    <p>Development, policy, and change across regions — the foundation for the energy-policy and satellite-imaging work that followed.</p>
+                </article>
+                <article class="card" data-reveal>
+                    <p class="card-tag">Bachelor of Arts</p>
+                    <h3>Leadership</h3>
+                    <p>Organizational behavior, group dynamics, strategic management, and cross-cultural leadership.</p>
+                </article>
+            </div>
+            <p class="edu-minors" data-reveal>Minors: <strong>Geography</strong> · <strong>Sustainability</strong></p>
         </section>
 
-        <section class="row" id="certifications">
-            <h2 class="row-title">Skills & Tools</h2>
-            <div class="row-posters" id="certifications-posters">
-                <!-- Injected via JS -->
+        <!-- Contact -->
+        <section class="section" id="contact">
+            <div class="section-head" data-reveal>
+                <p class="eyebrow">Contact</p>
+                <h2 class="display-h">Start a conversation</h2>
+                <p class="lede">Recruiting for a role, scoping a consulting engagement, or booking a speaker — send the details and Frank will reply personally. Submissions land directly in his inbox.</p>
             </div>
-        </section>
-
-        <section class="row" id="competencies">
-            <h2 class="row-title">Core Competencies</h2>
-            <div class="row-posters" id="competencies-posters">
-                <!-- Injected via JS -->
+            <div class="contact-grid">
+                <form class="contact-form" id="contact-form" action="https://formspree.io/f/xljbnaar" method="POST" data-reveal>
+                    <div class="field">
+                        <label for="cf-name">Full name <span class="req" aria-hidden="true">*</span></label>
+                        <input id="cf-name" type="text" name="name" autocomplete="name" required>
+                    </div>
+                    <div class="field">
+                        <label for="cf-email">Work email <span class="req" aria-hidden="true">*</span></label>
+                        <input id="cf-email" type="email" name="email" autocomplete="email" required>
+                    </div>
+                    <div class="field">
+                        <label for="cf-company">Company / Organization <span class="req" aria-hidden="true">*</span></label>
+                        <input id="cf-company" type="text" name="company" autocomplete="organization" required>
+                    </div>
+                    <div class="field">
+                        <label for="cf-role">Role / Opportunity <span class="req" aria-hidden="true">*</span></label>
+                        <input id="cf-role" type="text" name="role" placeholder="e.g. Solutions Consultant, Operations Manager" required>
+                    </div>
+                    <div class="field-row">
+                        <div class="field">
+                            <label for="cf-type">Opportunity type</label>
+                            <select id="cf-type" name="opportunity_type">
+                                <option value="Full-time">Full-time</option>
+                                <option value="Contract">Contract</option>
+                                <option value="Consulting">Consulting</option>
+                                <option value="Speaking / Advisory">Speaking / Advisory</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="cf-timeline">Timeline</label>
+                            <select id="cf-timeline" name="timeline">
+                                <option value="Immediate">Immediate</option>
+                                <option value="1–3 months">1–3 months</option>
+                                <option value="3–6 months">3–6 months</option>
+                                <option value="Exploring">Exploring</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="cf-location">Location / Remote</label>
+                        <input id="cf-location" type="text" name="location" placeholder="City, ST — or Remote / Hybrid">
+                    </div>
+                    <div class="field">
+                        <label for="cf-message">Message <span class="req" aria-hidden="true">*</span></label>
+                        <textarea id="cf-message" name="message" rows="5" placeholder="The role, the team, and what success looks like." required></textarea>
+                    </div>
+                    <input type="hidden" name="_subject" value="New opportunity inquiry — resume.hansonthecut.com">
+                    <button type="submit" class="btn btn-accent btn-lg contact-submit">Send Inquiry</button>
+                    <p class="contact-status" id="contact-status" role="status" aria-live="polite"></p>
+                </form>
+                <aside class="contact-aside" data-reveal>
+                    <h3>Direct</h3>
+                    <ul class="direct-list">
+                        <li><span>Email</span><a href="mailto:fiifi93@gmail.com">fiifi93@gmail.com</a></li>
+                        <li><span>Phone</span><a href="tel:7196635020">719-663-5020</a></li>
+                        <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/frankhanson4614" target="_blank" rel="noopener noreferrer">linkedin.com/in/frankhanson4614</a></li>
+                        <li><span>Based in</span><span class="direct-value">Centreville, VA — open to relocation</span></li>
+                    </ul>
+                    <h3>Elsewhere</h3>
+                    <ul class="direct-list">
+                        <li><span>Studio</span><a href="https://hansonthecut.com" target="_blank" rel="noopener noreferrer">hansonthecut.com</a></li>
+                        <li><span>Software</span><a href="https://store.hansonthecut.com" target="_blank" rel="noopener noreferrer">store.hansonthecut.com</a></li>
+                    </ul>
+                </aside>
             </div>
-        </section>
-
-        <section class="row" id="contact">
-            <h2 class="row-title">Contact</h2>
-            <form class="contact-form" id="contact-form" action="https://formspree.io/f/xljbnaar" method="POST">
-                <label for="cf-name">Name</label>
-                <input id="cf-name" type="text" name="name" autocomplete="name" required>
-                <label for="cf-email">Email</label>
-                <input id="cf-email" type="email" name="email" autocomplete="email" required>
-                <label for="cf-message">Message</label>
-                <textarea id="cf-message" name="message" rows="5" required></textarea>
-                <input type="hidden" name="_subject" value="New message from the interactive resume">
-                <button type="submit" class="btn btn-play contact-submit">Send Message</button>
-                <p class="contact-status" id="contact-status" role="status" aria-live="polite"></p>
-            </form>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <p class="footer-brand">FRANK HANSON</p>
-            <div class="footer-links">
-                <a href="mailto:fiifi93@gmail.com">fiifi93@gmail.com</a>
-                <a href="tel:7196635020">719-663-5020</a>
-                <a href="https://www.linkedin.com/in/frankhanson4614" target="_blank"
-                    rel="noopener noreferrer">LinkedIn</a>
-                <a href="https://sites.google.com/view/frankhanson" target="_blank"
-                    rel="noopener noreferrer">Google Sites</a>
-                <a href="https://hansonthecut.com" target="_blank"
-                    rel="noopener noreferrer">Hansonthecut</a>
-                <a href="https://store.hansonthecut.com" target="_blank"
-                    rel="noopener noreferrer">HansOn Store</a>
-            </div>
-            <div class="footer-qr-codes">
-                <div class="qr-item">
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://www.linkedin.com/in/frankhanson4614&color=ffffff&bgcolor=141414&margin=2" alt="LinkedIn QR">
-                    <span>LinkedIn</span>
-                </div>
-                <div class="qr-item">
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://sites.google.com/view/frankhanson&color=ffffff&bgcolor=141414&margin=2" alt="Google Sites QR">
-                    <span>Google Sites</span>
-                </div>
-            </div>
-            <p class="footer-copy">&copy; 2026 Frank Hanson. All rights reserved.</p>
-        </div>
+    <footer class="site-footer">
+        <p class="footer-brand">FRANK HANSON</p>
+        <nav class="footer-links" aria-label="Footer">
+            <a href="https://www.linkedin.com/in/frankhanson4614" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="mailto:fiifi93@gmail.com">fiifi93@gmail.com</a>
+            <a href="https://hansonthecut.com" target="_blank" rel="noopener noreferrer">Hansonthecut</a>
+            <a href="https://store.hansonthecut.com" target="_blank" rel="noopener noreferrer">HansOn Store</a>
+        </nav>
+        <p class="footer-copy">&copy; 2026 Frank Hanson. All rights reserved.</p>
     </footer>
-
-    <!-- Modal -->
-    <div class="modal-overlay" id="modal-overlay">
-        <div class="modal-content" id="modal-content">
-            <button class="modal-close" id="modal-close" aria-label="Close modal">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                    stroke-linecap="round">
-                    <line x1="18" y1="6" x2="6" y2="18" />
-                    <line x1="6" y1="6" x2="18" y2="18" />
-                </svg>
-            </button>
-
-            <div class="modal-header" id="modal-header-bg">
-                <div class="modal-header-content">
-                    <h1 class="modal-title" id="modal-title">Title</h1>
-                    <div class="modal-meta">
-                        <span class="match-score" id="modal-match">Featured</span>
-                        <span id="modal-date">Date</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="modal-body">
-                <div class="modal-desc" id="modal-desc">
-                    Description goes here.
-                </div>
-                <div class="modal-tags">
-                    <div class="tag-group">
-                        <span class="tag-label">Organization: </span>
-                        <span class="tag-values" id="modal-company">Company</span>
-                    </div>
-                    <div class="tag-group">
-                        <span class="tag-label">Skills: </span>
-                        <span class="tag-values" id="modal-skills">Skills</span>
-                    </div>
-                    <div class="tag-group">
-                        <span class="tag-label">Focus: </span>
-                        <span class="tag-values" id="modal-type">Type</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Contact Info Toast -->
-    <div class="toast" id="info-toast">
-        <div class="toast-body">
-            <p><strong>Email:</strong> fiifi93@gmail.com</p>
-            <p><strong>Phone:</strong> <a href="tel:7196635020" class="contact-link">719-663-5020</a></p>
-            <p><strong>LinkedIn:</strong> linkedin.com/in/frankhanson4614</p>
-        </div>
-    </div>
 
     <script src="script.js"></script>
 </body>
