@@ -498,7 +498,7 @@ html.fx-on [data-reveal].in { opacity: 1; transform: translateY(0); }
 }
 .stat-row {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 14px;
 }
 .stat {
@@ -514,6 +514,89 @@ html.fx-on [data-reveal].in { opacity: 1; transform: translateY(0); }
   letter-spacing: -0.01em;
 }
 .stat span { font-size: 12.5px; color: var(--text-faint); line-height: 1.4; display: block; margin-top: 5px; }
+
+/* Talent-review ratings + power radar (Dragon Ball-style, movie-rating frame) */
+.ratings-panel {
+  margin-top: 14px;
+  padding: 24px 26px 26px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+.ratings-title {
+  margin: 0 0 16px;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+.rating-lines {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.rating-line {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 14px 16px;
+  background: var(--surface-sunken);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.rating-name { font-weight: 700; font-size: 15px; }
+.stars { font-size: 17px; letter-spacing: 3px; line-height: 1; color: var(--text-primary); }
+.stars .star-off { color: var(--border-strong); }
+.rating-score { margin-left: auto; font-weight: 800; font-size: 17px; }
+.radar-figure { margin: 20px auto 4px; max-width: 430px; }
+.radar-chart { display: block; width: 100%; height: auto; }
+.radar-grid polygon { fill: none; stroke: var(--border); stroke-width: 1; }
+.radar-grid .radar-ring-outer { stroke: var(--border-strong); }
+.radar-axes line { stroke: var(--border); stroke-width: 1; }
+.radar-poly {
+  fill: var(--accent);
+  fill-opacity: 0.22;
+  stroke: var(--text-primary);
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
+.radar-dots circle { fill: var(--bg); stroke: var(--text-primary); stroke-width: 2; }
+.radar-labels text {
+  fill: var(--text-secondary);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+.radar-scale { fill: var(--text-faint); font-size: 10px; font-weight: 600; }
+.radar-anim { transform-box: view-box; transform-origin: center; }
+html.fx-on .radar-anim {
+  transform: scale(0.25);
+  opacity: 0;
+  transition: transform 1s cubic-bezier(0.22, 0.8, 0.3, 1) 0.2s, opacity 0.5s ease 0.2s;
+}
+html.fx-on [data-reveal].in .radar-anim { transform: scale(1); opacity: 1; }
+.radar-values {
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+.radar-values li {
+  font-size: 13px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--surface-sunken);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+.radar-values strong { color: var(--text-primary); margin-left: 4px; }
 
 /* ---------- Timeline ---------- */
 .timeline {
@@ -773,6 +856,8 @@ html.fx-on [data-reveal].in { opacity: 1; transform: translateY(0); }
   .field-row { grid-template-columns: 1fr; }
   .hero-inner { padding: 72px 18px 110px; }
   .stat-row { grid-template-columns: 1fr 1fr; }
+  .rating-lines { grid-template-columns: 1fr; }
+  .ratings-panel { padding: 20px 16px 22px; }
   .mega-word { opacity: 0.35; }
 }
 
