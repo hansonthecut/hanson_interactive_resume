@@ -898,6 +898,7 @@ html.fx-on [data-reveal].in .radar-anim { transform: scale(1); opacity: 1; }
   color: var(--text-primary);
 }
 .text-link:hover { text-decoration: underline; }
+.card .text-link { display: inline-block; margin-top: 14px; }
 
 .card-grid-2 { margin-bottom: 18px; }
 
