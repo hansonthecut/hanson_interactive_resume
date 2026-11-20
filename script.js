@@ -195,7 +195,7 @@
       }).then(function (res) {
         if (res.ok) {
           form.reset();
-          status.textContent = "Thank you — your inquiry is on its way. Frank replies personally to every serious opportunity.";
+          status.textContent = "Thank you. Your inquiry is on its way. Frank replies personally to every serious opportunity.";
           status.className = "contact-status success";
           if (window.gtag) gtag("event", "form_submit", { form_id: "resume-contact" });
         } else {
